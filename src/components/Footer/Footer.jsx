@@ -19,7 +19,7 @@ const Footer = () => {
                             href="https://www.facebook.com"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="flex items-center justify-center w-10 h-10 bg-blue-500 text-white rounded-full hover:w-12 hover:h-12 transition-all duration-300"
+                            className="flex items-center justify-center w-10 h-10 bg-blue-500 text-white rounded-full hover:w-11 hover:h-11 transition-all duration-300"
                         >
                             <FaFacebookF size={18} />
                         </a>
@@ -27,7 +27,7 @@ const Footer = () => {
                             href="https://www.instagram.com"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="flex items-center justify-center w-10 h-10 bg-pink-500 text-white rounded-full hover:w-12 hover:h-12 transition-all duration-300"
+                            className="flex items-center justify-center w-10 h-10 bg-pink-500 text-white rounded-full hover:w-11 hover:h-11 transition-all duration-300"
                         >
                             <FaInstagram size={18} />
                         </a>
@@ -35,7 +35,7 @@ const Footer = () => {
                             href="https://www.twitter.com"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="flex items-center justify-center w-10 h-10 bg-blue-400 text-white rounded-full hover:w-12 hover:h-12 transition-all duration-300"
+                            className="flex items-center justify-center w-10 h-10 bg-blue-400 text-white rounded-full hover:w-11 hover:h-11 transition-all duration-300"
                         >
                             <FaTwitter size={18} />
                         </a>
@@ -43,7 +43,7 @@ const Footer = () => {
                             href="https://www.pinterest.com"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="flex items-center justify-center w-10 h-10 bg-red-500 text-white rounded-full hover:w-12 hover:h-12 transition-all duration-300"
+                            className="flex items-center justify-center w-10 h-10 bg-red-500 text-white rounded-full hover:w-11 hover:h-11 transition-all duration-300"
                         >
                             <FaPinterest size={18} />
                         </a>
@@ -84,7 +84,7 @@ const Footer = () => {
             </div>
 
             {/* Footer Bottom */}
-            <div className="text-center text-sm mt-8">
+            <div className="text-center text-sm mt-8 mb-3">
                 <p>Copyright 2024 by HopeNest. All Rights Reserved.</p>
             </div>
         </footer>
