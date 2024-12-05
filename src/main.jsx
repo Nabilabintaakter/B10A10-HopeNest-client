@@ -14,6 +14,7 @@ import Login from './components/Login/Login.jsx';
 import SignUp from './components/SignUp/SignUp.jsx';
 import Home from './components/Home/Home.jsx';
 import AuthProvider from './components/AuthProvider/AuthProvider.jsx';
+import PrivateRoute from './components/PrivateRoute/PrivateRoute.jsx';
 
 const router = createBrowserRouter([
   {
@@ -30,15 +31,15 @@ const router = createBrowserRouter([
       },
       {
         path: "/addCampaign",
-        element: <AddCampaign></AddCampaign>,
+        element: <PrivateRoute><AddCampaign></AddCampaign></PrivateRoute>,
       },
       {
         path: "/myCampaign",
-        element: <MyCampaign></MyCampaign>,
+        element: <PrivateRoute><MyCampaign></MyCampaign></PrivateRoute>,
       },
       {
         path: "/myDonations",
-        element: <MyDonations></MyDonations>,
+        element: <PrivateRoute><MyDonations></MyDonations>,</PrivateRoute>
       },
       {
         path: "/login",
