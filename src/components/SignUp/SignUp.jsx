@@ -61,9 +61,13 @@ const SignUp = () => {
                         }, 2000);
                     })
                     .catch(err => {
-                        toast.error(`${err.message.slice(10)}`, {
-                            position: "top-center",
+                        Swal.fire({
+                            icon: "error",
+                            title: "Oops...",
+                            text: err.message.slice(10),
+                            footer: 'Please verify ',
                         });
+                        setUser(null);
                     });
             })
             .catch(err => {
@@ -79,7 +83,7 @@ const SignUp = () => {
             className="font-sans py-16 lg:pt-10 bg-gray-50 lg:pb-20 relative flex flex-col items-center min-h-screen"
         >
             <div className="text-center mb-8 px-4">
-                <p className="font-libre text-2xl lg:text-3xl font-semibold text-gray-800 mb-2">Join HopeNest to create a positive impact.</p>
+                <p className="font-libre text-2xl lg:text-3xl font-semibold text-gray-800 mb-2">Join HopeNest to create a positive impact!</p>
                 <p className="text-lg lg:text-xl text-gray-600">Please sign up to begin your journey.</p>
             </div>
 
@@ -149,7 +153,7 @@ const SignUp = () => {
                     Already have an account? Please
                     <NavLink
                         to="/login"
-                        className="text-blue-600 ml-1 font-semibold hover:underline"
+                        className="text-blue-600 ml-1 text-xl font-semibold hover:underline"
                     >
                         Login
                     </NavLink>

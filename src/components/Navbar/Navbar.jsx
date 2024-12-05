@@ -53,12 +53,13 @@ const Navbar = () => {
                             </ul>
                         </div>
                     </div>
-                    <Link to='/'><div className='w-36 md:w-44'><img className='w-full' src={logo} alt="" /></div></Link>
+                    <Link to='/'><div className='w-44 hidden lg:block'><img className='w-full' src={logo} alt="" /></div></Link>
                 </div>
-                <div className="navbar-center hidden lg:flex">
-                    <ul className="menu menu-horizontal px-1">
+                <div className="navbar-center ">
+                    <ul className="hidden lg:flex menu menu-horizontal px-1">
                         {links}
                     </ul>
+                    <Link to='/'><div className='w-44 block lg:hidden'><img className='w-full' src={logo} alt="" /></div></Link>
                 </div>
                 <div className="navbar-end flex justify-end">
                     {user ? (
@@ -98,16 +99,18 @@ const Navbar = () => {
                         </div>
                     ) : (
                         <div className="flex items-center justify-end gap-2">
-                            <Link to="/login">
-                                <button className="px-4 md:px-5 py-[7px] rounded-md border-[1px] border-blue-500 text-blue-500 hover:bg-blue-500 hover:text-white transition-all duration-500">
-                                    Login
-                                </button>
-                            </Link>
-                            <Link to="/signUp">
-                                <button className="w-auto px-4 md:px-5 py-2 rounded-md bg-green-500 text-white hover:bg-green-600 transition-all duration-500">
-                                    Sign Up
-                                </button>
-                            </Link>
+                            <div className='flex flex-col md:flex-row gap-1'>
+                                <Link to="/login">
+                                    <button className="w-20 md:w-24 btn btn-sm md:btn-md rounded-md border-[1px] border-blue-500 text-blue-500 hover:bg-blue-500 hover:text-white transition-all duration-500">
+                                        Login
+                                    </button>
+                                </Link>
+                                <Link to="/signUp">
+                                    <button className="w-[82px] md:w-24 btn btn-sm md:btn-md rounded-md bg-green-500 text-white hover:bg-green-600 transition-all duration-500">
+                                        Sign Up
+                                    </button>
+                                </Link>
+                            </div>
                         </div>
                     )}
                 </div>

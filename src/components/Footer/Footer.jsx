@@ -3,7 +3,7 @@ import logo from '../../assets/logo.png';
 
 const Footer = () => {
     return (
-        <footer className="bg-gray-800 text-white py-8 font-sans">
+        <footer className="bg-gray-800 text-white pt-12 pb-2 font-sans">
             <div className="container mx-auto px-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
 
                 {/* Left Section - Logo & Description */}
@@ -18,32 +18,28 @@ const Footer = () => {
                         <a
                             href="https://www.facebook.com"
                             target="_blank"
-                            rel="noopener noreferrer"
-                            className="flex items-center justify-center w-10 h-10 bg-blue-500 text-white rounded-full hover:w-11 hover:h-11 transition-all duration-300"
+                            className="flex items-center justify-center w-8 h-8 bg-blue-500 text-white rounded-full hover:w-9 hover:h-9 transition-all duration-300"
                         >
                             <FaFacebookF size={18} />
                         </a>
                         <a
                             href="https://www.instagram.com"
                             target="_blank"
-                            rel="noopener noreferrer"
-                            className="flex items-center justify-center w-10 h-10 bg-pink-500 text-white rounded-full hover:w-11 hover:h-11 transition-all duration-300"
+                            className="flex items-center justify-center w-8 h-8 bg-pink-500 text-white rounded-full hover:w-9 hover:h-9 transition-all duration-300"
                         >
                             <FaInstagram size={18} />
                         </a>
                         <a
                             href="https://www.twitter.com"
                             target="_blank"
-                            rel="noopener noreferrer"
-                            className="flex items-center justify-center w-10 h-10 bg-blue-400 text-white rounded-full hover:w-11 hover:h-11 transition-all duration-300"
+                            className="flex items-center justify-center w-8 h-8 bg-blue-400 text-white rounded-full hover:w-9 hover:h-9 transition-all duration-300"
                         >
                             <FaTwitter size={18} />
                         </a>
                         <a
                             href="https://www.pinterest.com"
                             target="_blank"
-                            rel="noopener noreferrer"
-                            className="flex items-center justify-center w-10 h-10 bg-red-500 text-white rounded-full hover:w-11 hover:h-11 transition-all duration-300"
+                            className="flex items-center justify-center w-8 h-8 bg-red-500 text-white rounded-full hover:w-9 hover:h-9 transition-all duration-300"
                         >
                             <FaPinterest size={18} />
                         </a>

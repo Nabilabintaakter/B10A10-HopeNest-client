@@ -135,7 +135,7 @@ const Login = () => {
                     New to HopeNest? Please
                     <NavLink
                         to="/signUp"
-                        className="text-blue-600 ml-1 font-semibold hover:underline"
+                        className="text-blue-600 ml-1 text-xl font-semibold hover:underline"
                     >
                         Sign Up
                     </NavLink>
