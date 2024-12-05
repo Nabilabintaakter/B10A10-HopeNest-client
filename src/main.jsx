@@ -13,6 +13,7 @@ import MyDonations from './components/MyDonations/MyDonations.jsx';
 import Login from './components/Login/Login.jsx';
 import SignUp from './components/SignUp/SignUp.jsx';
 import Home from './components/Home/Home.jsx';
+import AuthProvider from './components/AuthProvider/AuthProvider.jsx';
 
 const router = createBrowserRouter([
   {
@@ -53,6 +54,8 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <RouterProvider router={router} />
+    <AuthProvider>
+      <RouterProvider router={router} />
+    </AuthProvider>
   </StrictMode>,
 )
