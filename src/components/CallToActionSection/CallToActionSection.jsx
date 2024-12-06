@@ -12,7 +12,7 @@ const CallToActionSection = () => {
                     Join us in creating a sustainable impact worldwide. Your contribution can help uplift communities in need and bring about positive change.
                 </p>
                 <div className="flex justify-center gap-4 mb-8">
-                    <button className="bg-yellow-500 text-white font-bold py-2 px-6 rounded-md hover:bg-yellow-600 transition-colors">
+                    <button className="bg-[#FFA71D] text-white font-bold py-2 px-6 rounded-md hover:bg-[#c57a02] transition-colors">
                         Donate Now
                     </button>
                     <button className="bg-white text-orange-600 font-bold py-2 px-6 rounded-md border-2 border-white hover:bg-orange-50 transition-colors">
@@ -28,9 +28,9 @@ const CallToActionSection = () => {
                         <input
                             type="email"
                             placeholder="Enter Your Email"
-                            className="pl-4 py-[14px] w-80 rounded-md border-2 border-white bg-transparent text-white placeholder-white focus:ring-2 focus:ring-yellow-500 focus:outline-none"
+                            className="pl-4 py-[14px] w-80 rounded-md border-2 border-white bg-transparent text-white placeholder-white"
                         />
-                        <button className="bg-yellow-500 text-white font-semibold py-4 px-8 rounded-md hover:bg-yellow-600 transition-all transform hover:scale-105">
+                        <button className="bg-[#FFA71D] text-white font-semibold py-4 px-8 rounded-md hover:bg-[#c57a02] transition-all transform hover:scale-105">
                             Subscribe
                         </button>
                     </div>
