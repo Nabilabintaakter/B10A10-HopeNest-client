@@ -19,24 +19,24 @@ const Navbar = () => {
         <li><NavLink onClick={scrollToTop}
             to="/"
             className={({ isActive }) =>
-                isActive && "text-[#FFA415] font-bold drop-shadow-[0_5px_5px_rgba(0,0,0.4,0.4)]"
+                isActive ? "text-[#FFA415] font-bold drop-shadow-[0_5px_5px_rgba(0,0,0.4,0.4)]" : ''
             }
         >Home</NavLink></li>
         <li><NavLink onClick={scrollToTop} className={({ isActive }) =>
-            isActive && "text-[#FFA415] font-bold drop-shadow-[0_5px_5px_rgba(0,0,0.4,0.4)]"
+            isActive ? "text-[#FFA415] font-bold drop-shadow-[0_5px_5px_rgba(0,0,0.4,0.4)]" : ''
         } to='/campaigns'>All Campaign</NavLink></li>
         <li><NavLink onClick={scrollToTop} className={({ isActive }) =>
-            isActive && "text-[#FFA415] font-bold drop-shadow-[0_5px_5px_rgba(0,0,0.4,0.4)]"
+            isActive ? "text-[#FFA415] font-bold drop-shadow-[0_5px_5px_rgba(0,0,0.4,0.4)]" : ''
         } to='/addCampaign'>Add New Campaign</NavLink></li>
         <li><NavLink onClick={scrollToTop} className={({ isActive }) =>
-            isActive && "text-[#FFA415] font-bold drop-shadow-[0_5px_5px_rgba(0,0,0.4,0.4)]"
+            isActive ? "text-[#FFA415] font-bold drop-shadow-[0_5px_5px_rgba(0,0,0.4,0.4)]" : ''
         } to='/myCampaign'>My Campaign</NavLink></li>
         <li><NavLink onClick={scrollToTop} className={({ isActive }) =>
-            isActive && "text-[#FFA415] font-bold drop-shadow-[0_5px_5px_rgba(0,0,0.4,0.4)]"
+            isActive ? "text-[#FFA415] font-bold drop-shadow-[0_5px_5px_rgba(0,0,0.4,0.4)]" : ''
         } to='/myDonations'>My Donations</NavLink></li>
     </>
     return (
-        <div className='font-sans bg-white/80 z-50 fixed backdrop-blur-md w-full'>
+        <div className='font-sans bg-white/60 z-50 fixed backdrop-blur-md w-full'>
             <div className="navbar w-[98%]  mx-auto">
                 <div className="navbar-start">
                     <div className="drawer w-[100%] lg:hidden">

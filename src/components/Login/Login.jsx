@@ -56,8 +56,11 @@ const Login = () => {
         handleGoogleSignIn()
             .then(res => {
                 setUser(res.user)
-                toast.success("Successfully logged in!", {
-                    position: "top-center"
+                Swal.fire({
+                    icon: "success",
+                    title: "Successfully Logged in to your account!",
+                    showConfirmButton: false,
+                    timer: 2000
                 });
                 setTimeout(() => {
                     navigate(location.state ? location.state.from : '/')
@@ -65,17 +68,20 @@ const Login = () => {
 
             })
             .catch(err => {
-                toast.error(`${err.message.slice(10)}`, {
-                    position: "top-center"
+                Swal.fire({
+                    icon: "error",
+                    title: "Oops...",
+                    text: err.message.slice(10),
+                    footer: 'Please verify that your email and password are entered correctly.',
                 });
                 setUser(null)
             })
     }
 
     return (
-        <div className="font-sans py-16 lg:pt-10 lg:pb-20 flex flex-col items-center min-h-screen bg-gray-50">
+        <div className="font-sans pt-6 pb-10 lg:pt-10 lg:pb-20 flex flex-col items-center min-h-screen bg-gray-50">
             <div className="text-center mb-8 px-4">
-                <p className="font-libre text-2xl lg:text-3xl font-semibold text-gray-800 mb-4">Log in to HopeNest to make an impact!</p>
+                <p className=" text-2xl lg:text-3xl font-semibold text-gray-800 mb-2">Log in to HopeNest to make an impact!</p>
                 <p className="text-lg lg:text-xl text-gray-600">Please enter your credentials to continue.</p>
             </div>
 

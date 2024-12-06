@@ -80,10 +80,10 @@ const SignUp = () => {
     }
     return (
         <div
-            className="font-sans py-16 lg:pt-10 bg-gray-50 lg:pb-20 relative flex flex-col items-center min-h-screen"
+            className="font-sans pt-6 pb-10 lg:pt-10 bg-gray-50 lg:pb-20 relative flex flex-col items-center min-h-screen"
         >
             <div className="text-center mb-8 px-4">
-                <p className="font-libre text-2xl lg:text-3xl font-semibold text-gray-800 mb-2">Join HopeNest to create a positive impact!</p>
+                <p className=" text-2xl lg:text-3xl font-semibold text-gray-800 mb-2">Join HopeNest to create a positive impact!</p>
                 <p className="text-lg lg:text-xl text-gray-600">Please sign up to begin your journey.</p>
             </div>
 

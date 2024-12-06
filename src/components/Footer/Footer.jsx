@@ -9,7 +9,7 @@ const Footer = () => {
                 {/* Left Section - Logo & Description */}
                 <div>
                     <div className="flex items-center space-x-2">
-                        <img src={logo} alt="HopeNest Logo" className="bg-white rounded-tl-lg rounded-br-lg p-3 w-64 mb-2" />
+                        <img src={logo} alt="HopeNest Logo" className="bg-white rounded-tl-2xl rounded-br-2xl p-3 w-64 mb-2" />
                     </div>
                     <p className="text-sm mt-2">Empowering dreams with your generous support. Together, we can make a difference.</p>
 

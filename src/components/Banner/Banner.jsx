@@ -19,16 +19,16 @@ const Banner = () => {
         <div>
             <Swiper
                 spaceBetween={30}
-                effect={'fade'} // Enable fade effect
+                effect={'fade'} 
                 navigation={true}
                 autoplay={{
-                    delay: 2500,
+                    delay: 3500,
                     disableOnInteraction: false,
                 }}
                 pagination={{
                     clickable: true,
                 }}
-                modules={[Autoplay, Navigation, Pagination, EffectFade]} // Include EffectFade module
+                modules={[Autoplay, Navigation, Pagination, EffectFade]} 
                 className="mySwiper"
             >
 
