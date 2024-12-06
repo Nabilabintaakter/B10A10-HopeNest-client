@@ -53,7 +53,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/campaigns/:id",
-        element: <Details></Details>,
+        element: <PrivateRoute><Details></Details></PrivateRoute>,
         loader: ({params})=> fetch(`http://localhost:5000/campaigns/${params.id}`)
       },
     ]
