@@ -15,6 +15,7 @@ import SignUp from './components/SignUp/SignUp.jsx';
 import Home from './components/Home/Home.jsx';
 import AuthProvider from './components/AuthProvider/AuthProvider.jsx';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute.jsx';
+import Details from './components/Details/Details.jsx';
 
 const router = createBrowserRouter([
   {
@@ -49,6 +50,11 @@ const router = createBrowserRouter([
       {
         path: "/signUp",
         element: <SignUp></SignUp>,
+      },
+      {
+        path: "/campaigns/:id",
+        element: <Details></Details>,
+        loader: ({params})=> fetch(`http://localhost:5000/campaigns/${params.id}`)
       },
     ]
   },

@@ -26,7 +26,7 @@ const RunningCampaigns = ({ campaigns }) => {
                                 <p className="text-sm text-gray-600 mb-4">
                                     Ends in: <span className="font-medium text-gray-800">{campaign.deadline}</span>
                                 </p>
-                                <Link to={`/campaign/${campaign._id}`}
+                                <Link to={`/campaigns/${campaign._id}`}
                                     className="btn btn-sm bg-blue-500 hover:bg-blue-600 text-white font-medium rounded-md w-full"
                                 >
                                     See More
