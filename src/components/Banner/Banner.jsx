@@ -13,6 +13,7 @@ import 'swiper/css/navigation';
 
 // import required modules
 import { Autoplay, Pagination, Navigation,EffectFade } from 'swiper/modules';
+import { Link } from 'react-router-dom';
 
 const Banner = () => {
     return (
@@ -34,53 +35,53 @@ const Banner = () => {
 
                 <SwiperSlide>
                     <div
-                        className="hero h-[400px]"
+                        className="hero h-[400px] lg:h-[500px] font-sans"
                         style={{
-                            backgroundImage: `url(${slider1})`,
+                            backgroundImage: `url(https://i.ibb.co.com/hV3NfQD/11.webp)`,
                         }}>
                         <div className="hero-overlay bg-opacity-80"></div>
                         <div className="hero-content text-neutral-content text-center">
                             <div className="text-white">
-                                <h1 className="font-libre w-full mb-5 text-3xl md:text-4xl font-bold max-w-5xl ">EMPOWER  EDUCATION  FOR  ALL</h1>
+                                <h1 className=" w-full mb-5 text-3xl md:text-4xl font-bold max-w-5xl ">SUPPORT A SHARED WORKSPACE FOR STARTUPS</h1>
                                 <p className="mb-5 text-sm md:text-base font-sans max-w-3xl mx-auto">
-                                    Your small donation can make a big difference in a child’s education, opening doors to brighter futures, unlocking potential, and empowering them to break the cycle of poverty.
+                                Help us build a dynamic and inclusive space designed to empower aspiring entrepreneurs. This is more than just a workplace—it's a hub for creativity, collaboration, and innovation, where individuals can share ideas, develop skills, and bring their visions to life.
                                 </p>
-                                <button className="font-sans btn bg-[#FFA71D] border-none">Support Education</button>
+                                <Link to='/campaigns/675309de74dab0e432970d6a' className="font-sans btn bg-[#FFA71D] border-none">Join the mission</Link>
                             </div>
                         </div>
                     </div>
                 </SwiperSlide>
                 <SwiperSlide><div
-                    className="hero h-[400px]"
+                    className="hero h-[400px] lg:h-[500px] font-sans"
                     style={{
-                        backgroundImage: `url(${slider2})`,
+                        backgroundImage: `url(https://i.ibb.co.com/VDtRZb0/10.webp)`,
                     }}>
                     <div className="hero-overlay bg-opacity-80"></div>
                     <div className="hero-content text-neutral-content text-center">
                         <div className="text-white">
-                            <h1 className="font-libre w-full mb-5 text-3xl md:text-4xl font-bold max-w-5xl">SUPPORT DISASTER RELIEF EFFORTS"</h1>
+                            <h1 className=" w-full mb-5 text-3xl md:text-4xl font-bold max-w-5xl">EMERGENCY FUNDS FOR FIRE VICTIMS</h1>
                             <p className="mb-5 text-sm md:text-base font-sans max-w-3xl mx-auto">
-                                Help us provide essential supplies to families in need, ensuring they have access to food, clothing, and other necessities for a safe, healthy, and dignified life. Together, we can offer hope and support to those facing difficult times.
+                            Help families rebuild their lives after losing their homes in a devastating fire. Your generous contributions can provide them with the resources they need to recover, rebuild, and start anew. Every donation counts!
                             </p>
-                            <button className="font-sans btn bg-[#FFA71D] border-none">Support a Family</button>
+                            <Link to='/campaigns/6753094f74dab0e432970d69' className="font-sans btn bg-[#FFA71D] border-none">Support a Family</Link>
                         </div>
                     </div>
                 </div>
                 </SwiperSlide>
                 <SwiperSlide>
                     <div
-                        className="hero h-[400px]"
+                        className="hero h-[400px] lg:h-[500px] font-sans"
                         style={{
-                            backgroundImage: `url(${slider3})`,
+                            backgroundImage: `url(https://i.ibb.co.com/V9k0GJ6/5.webp)`,
                         }}>
                         <div className="hero-overlay bg-opacity-80"></div>
                         <div className="hero-content text-neutral-content text-center">
                             <div className="text-white">
-                                <h1 className="font-libre w-full mb-5 text-3xl md:text-4xl font-bold max-w-5xl">JOIN HANDS FOR A HEALTHIER TOMORROW</h1>
+                                <h1 className=" w-full mb-5 text-3xl md:text-4xl font-bold max-w-5xl">GREEN SPACE FOR ALL</h1>
                                 <p className="text-sm md:text-base mb-5 font-sans max-w-3xl mx-auto">
-                                    Contribute to life-saving medical assistance for vulnerable communities and help provide critical care to those who need it the most. Your generosity can bring hope and healing to people facing life-threatening conditions.
+                                Join us in creating a community garden that promotes sustainable urban living. By supporting this initiative, you help provide a green space for residents to grow their own food, connect with nature, and foster a sense of community in our city.
                                 </p>
-                                <button className="font-sans btn bg-[#FFA71D] border-none">Make a Difference</button>
+                                <Link to='/campaigns/675306f974dab0e432970d64' className="font-sans btn bg-[#FFA71D] border-none">Contribute Now</Link>
                             </div>
                         </div>
                     </div>
