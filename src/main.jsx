@@ -17,11 +17,13 @@ import AuthProvider from './components/AuthProvider/AuthProvider.jsx';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute.jsx';
 import Details from './components/Details/Details.jsx';
 import UpdateCampaign from './components/UpdateCampaign/UpdateCampaign.jsx';
+import ErrorPage from './components/ErrorPage/ErrorPage.jsx';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <MainLayout></MainLayout>,
+    errorElement: <ErrorPage></ErrorPage>,
     children: [
       {
         path: "/",
@@ -40,7 +42,6 @@ const router = createBrowserRouter([
       {
         path: "/myCampaign",
         element: <PrivateRoute><MyCampaign></MyCampaign></PrivateRoute>,
-        loader: () => fetch('http://localhost:5000/allCampaigns')
       },
       {
         path: "/myDonations",

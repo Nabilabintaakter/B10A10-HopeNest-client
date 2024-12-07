@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState } from 'react';
-import { Link, useLoaderData } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { AuthContext } from '../AuthProvider/AuthProvider';
 import { MdModeEdit } from "react-icons/md";
 import { RiDeleteBin6Fill } from "react-icons/ri";
@@ -7,14 +7,24 @@ import { HiDotsHorizontal } from "react-icons/hi";
 import Swal from 'sweetalert2';
 
 const MyCampaign = () => {
-    const { user } = useContext(AuthContext);
-    const loadedCampaigns = useLoaderData();
-    const [campaigns, setCampaigns] = useState(loadedCampaigns)
+    const { user ,setLoading} = useContext(AuthContext);
+    const [campaigns, setCampaigns] = useState([]);
 
-    useEffect(() => {
-        const filtered = [...campaigns].filter(campaign => campaign.email === user.email);
-        setCampaigns(filtered);
-    }, [])
+useEffect(() => {
+    if (user?.email) {
+        fetch(`http://localhost:5000/myCampaigns?email=${user.email}`)
+            .then((res) => res.json())
+            .then((data) => {
+                console.log(data);
+                setCampaigns(data);
+                setLoading(false);
+            })
+            .catch(() => setLoading(false));
+    }
+}, [user?.email]);
+   
+
+
 
     const handleDelete = id => {
         console.log(id);

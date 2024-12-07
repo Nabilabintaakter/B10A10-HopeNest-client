@@ -1,10 +1,11 @@
 import React, { useContext } from 'react';
-import { Link, useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../AuthProvider/AuthProvider';
 import Swal from 'sweetalert2';
 
 const UpdateCampaign = () => {
     const { user, setUser } = useContext(AuthContext)
+    const navigate = useNavigate();
     const campaign = useLoaderData();
     const { _id, thumbnail, title, type, description,amount,deadline,email,name} = campaign || {};
  
@@ -35,18 +36,26 @@ const UpdateCampaign = () => {
             .then(data => {
                 console.log(data);
                 if (data.modifiedCount>0) {
-                    Swal.fire({
-                        title: "Do you want to update the campaign informations?",
-                        showCancelButton: true,
-                        confirmButtonText: "Yes, I want",
-                        cancelButtonText: 'No'
-                      }).then((result) => {
-                        /* Read more about isConfirmed, isDenied below */
-                        if (result.isConfirmed) {
-                          Swal.fire("Updated Successfully!", "", "success");
-                        } 
+                    const Toast = Swal.mixin({
+                        toast: true,
+                        position: "top-end",
+                        showConfirmButton: false,
+                        timer: 2000,
+                        timerProgressBar: true,
+                        didOpen: (toast) => {
+                          toast.onmouseenter = Swal.stopTimer;
+                          toast.onmouseleave = Swal.resumeTimer;
+                        }
                       });
-                }
+                      Toast.fire({
+                        icon: "success",
+                        title: "Updated Campaign successfully!"
+                      });
+                      form.reset();
+                      setTimeout(() => {
+                        navigate('/myCampaign')
+                    }, 2000)
+                }  
             })
     }
     return (
