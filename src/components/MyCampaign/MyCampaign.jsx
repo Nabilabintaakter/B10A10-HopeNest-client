@@ -4,6 +4,7 @@ import { AuthContext } from '../AuthProvider/AuthProvider';
 import { MdModeEdit } from "react-icons/md";
 import { RiDeleteBin6Fill } from "react-icons/ri";
 import { HiDotsHorizontal } from "react-icons/hi";
+import Swal from 'sweetalert2';
 
 const MyCampaign = () => {
     const { user } = useContext(AuthContext);
@@ -14,6 +15,38 @@ const MyCampaign = () => {
         const filtered = [...campaigns].filter(campaign => campaign.email === user.email);
         setCampaigns(filtered);
     }, [])
+
+    const handleDelete = id => {
+        console.log(id);
+        Swal.fire({
+            title: "Are you sure?",
+            text: "You won't be able to revert this!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes, delete it!"
+        }).then((result) => {
+            if (result.isConfirmed) {
+                fetch(`http://localhost:5000/campaigns/${id}`, {
+                    method: "DELETE"
+                })
+                    .then(res => res.json())
+                    .then(data => {
+                        console.log(data);
+                        if (data.deletedCount > 0) {
+                            Swal.fire({
+                                title: "Deleted!",
+                                text: "Your campaign has been deleted.",
+                                icon: "success"
+                            });
+                            const remaining = campaigns.filter(campaign => campaign._id !== id);
+                            setCampaigns(remaining);
+                        }
+                    })
+            }
+        });
+    }
 
     return (
         <div className="mb-14 md:my-14 lg:mb-20 font-sans w-[95%] mx-auto max-w-7xl">
@@ -52,13 +85,13 @@ const MyCampaign = () => {
                                     <button title='Update' className='btn btn-sm md:btn-md bg-white text-green-500 hover:bg-green-500 hover:text-white transition-all duration-300'>
                                         <MdModeEdit /><span className='hidden md:block'>Update</span>
                                     </button>
-                                    <button title='Delete' className='btn btn-sm md:btn-md bg-white hover:bg-red-500 text-red-500 hover:text-white transition-all duration-300 md:text-xl'>
-                                        <RiDeleteBin6Fill className='  ' />
+                                    <button onClick={() => handleDelete(campaign._id)} title='Delete' className='btn btn-sm md:btn-md bg-white hover:bg-red-500 text-red-500 hover:text-white transition-all duration-300 md:text-xl'>
+                                        <RiDeleteBin6Fill />
                                     </button>
                                 </td>
                                 <td className="px-4 py-4 ">
                                     <Link to={`/campaigns/${campaign._id}`} title='see more' className='btn btn-sm md:btn-md bg-white md:text-xl'>
-                                    <HiDotsHorizontal className=' ' />
+                                        <HiDotsHorizontal />
                                     </Link>
                                 </td>
                             </tr>
