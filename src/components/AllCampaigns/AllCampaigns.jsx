@@ -33,7 +33,7 @@ const AllCampaigns = () => {
                                 <td className="px-4 py-4 font-bold">{index + 1}.</td>
                                 <td className="px-4 py-4">{campaign.title}</td>
                                 <td className="px-4 py-4 hidden md:table-cell">{campaign.type}</td>
-                                <td className="px-4 py-4">{campaign.amount}/=</td>
+                                <td className="px-4 py-4">{campaign.amount}</td>
                                 <td className="px-4 py-4 hidden md:table-cell">{campaign.deadline}</td>
                                 <td className="px-4 py-4">
                                     <Link to={`/campaigns/${campaign._id}`} className="text-[#fcaa29] hover:underline">See More</Link>

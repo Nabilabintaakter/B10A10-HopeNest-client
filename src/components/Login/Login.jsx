@@ -33,11 +33,11 @@ const Login = () => {
                     icon: "success",
                     title: "Successfully Logged in to your account!",
                     showConfirmButton: false,
-                    timer: 2000
+                    timer: 3000
                 });
                 setTimeout(() => {
                     navigate(location.state ? location.state.from : '/')
-                }, 2000)
+                }, 3000)
             })
             .catch(err => {
                 setLoading(false);
@@ -60,11 +60,11 @@ const Login = () => {
                     icon: "success",
                     title: "Successfully Logged in to your account!",
                     showConfirmButton: false,
-                    timer: 2000
+                    timer: 3000
                 });
                 setTimeout(() => {
                     navigate(location.state ? location.state.from : '/')
-                }, 2000)
+                }, 3000)
 
             })
             .catch(err => {
