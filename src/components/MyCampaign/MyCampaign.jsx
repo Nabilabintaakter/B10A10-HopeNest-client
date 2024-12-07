@@ -82,9 +82,9 @@ const MyCampaign = () => {
                                 <td className="px-4 py-4 hidden md:table-cell">{campaign.amount}</td>
                                 <td className="px-4 py-4 hidden md:table-cell">{campaign.name}</td>
                                 <td className="px-4 py-4 flex flex-col md:flex-row items-center gap-1">
-                                    <button title='Update' className='btn btn-sm md:btn-md bg-white text-green-500 hover:bg-green-500 hover:text-white transition-all duration-300'>
+                                    <Link to={`/updateCampaign/${campaign._id}`} title='Update' className='btn btn-sm md:btn-md bg-white text-green-500 hover:bg-green-500 hover:text-white transition-all duration-300'>
                                         <MdModeEdit /><span className='hidden md:block'>Update</span>
-                                    </button>
+                                    </Link>
                                     <button onClick={() => handleDelete(campaign._id)} title='Delete' className='btn btn-sm md:btn-md bg-white hover:bg-red-500 text-red-500 hover:text-white transition-all duration-300 md:text-xl'>
                                         <RiDeleteBin6Fill />
                                     </button>
