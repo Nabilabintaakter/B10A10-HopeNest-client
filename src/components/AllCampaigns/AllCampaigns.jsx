@@ -4,7 +4,7 @@ const AllCampaigns = () => {
     const campaigns = useLoaderData();
     return (
         <div className="mb-14 md:my-14 lg:mb-20 font-sans w-[95%] mx-auto max-w-7xl">
-            <div className="flex justify-center items-center mb-5 md:mb-8">
+            <div className="flex justify-center items-center mb-10 md:mb-12">
                 <div className="text-center">
                     <h1 className="font-semibold text-[#374151] text-3xl md:text-4xl mb-2 md:mb-4">Explore All Campaigns</h1>
                     <p className="text-sm md:text-base font-sans text-[#1B1A1AB3] w-full md:w-[70%] mx-auto">Explore a variety of impactful campaigns dedicated to making a difference. Your support can help bring positive change to communities and causes in need.</p>

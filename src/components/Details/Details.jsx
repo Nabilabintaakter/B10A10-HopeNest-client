@@ -1,8 +1,50 @@
-
-import { Link, useLoaderData } from 'react-router-dom';
+import { useContext } from 'react';
+import { Link, useLoaderData, useNavigate } from 'react-router-dom';
+import Swal from 'sweetalert2';
+import { AuthContext } from '../AuthProvider/AuthProvider';
 
 const Details = () => {
-    const campaign = useLoaderData()
+    const {user} = useContext(AuthContext);
+    const campaign = useLoaderData();
+    const navigate = useNavigate();
+
+    const handleDonate = campaign =>{
+        console.log('donate for :', campaign);
+
+        const campaignData = {
+            thumbnail : campaign.thumbnail,
+            title : campaign.title,
+            type : campaign.type,
+            description : campaign.description,
+            amount : campaign.amount,
+            deadline : campaign.deadline,
+            email : campaign.email,
+            name : campaign.name,
+            donorsEmail : user?.email
+        }
+
+        fetch(`http://localhost:5000/myDonations`, {
+            method: "POST",
+            headers: {
+                'content-type':'application/json'
+            },
+            body: JSON.stringify(campaignData )
+        })
+        .then(res=>res.json())
+        .then(data=>{
+            if (data.insertedId) {
+                Swal.fire({
+                    icon: "success",
+                    title: "Thank you! Your donation is successful.",
+                    showConfirmButton: false,
+                    timer: 3000
+                });
+                setTimeout(() => {
+                    navigate('/myDonations')
+                }, 3000)
+            }
+        })
+    }
     return (
         <div className='font-inter w-[95%] md:w-[85%] max-w-7xl mx-auto pt-2 md:pt-10 md:pb-24'>
             <div className="flex flex-col lg:flex-row h-auto lg:h-[420px] rounded-md md:rounded-2xl bg-[#ffb94944] shadow-xl mb-8">
@@ -35,7 +77,7 @@ const Details = () => {
                     <p className="text-sm xl:text-base text-gray-800 font-semibold mb-3 md:mb-6">
                         User Email: <span className="font-inter font-normal text-gray-700">{campaign?.email}</span>
                     </p>
-                    <button className="font-inter btn btn-sm md:btn-md border-none bg-green-500 hover:bg-green-600 text-white text-sm xl:text-base font-normal rounded-md w-full">
+                    <button onClick={()=>handleDonate(campaign)} className="font-inter btn btn-sm md:btn-md border-none bg-green-500 hover:bg-green-600 text-white text-sm xl:text-base font-normal rounded-md w-full">
                         Donate
                     </button>
                 </div>
