@@ -48,29 +48,29 @@ const Footer = () => {
 
                 {/* Middle Section - Services */}
                 <div>
-                    <h4 className="font-semibold text-lg">Services</h4>
-                    <ul className="mt-2">
-                        <li><a href="#" className="hover:text-blue-500">Incident Responder</a></li>
-                        <li><a href="#" className="hover:text-blue-500">Secure Managed Fund</a></li>
-                        <li><a href="#" className="hover:text-blue-500">Clean Water for All</a></li>
-                        <li><a href="#" className="hover:text-blue-500">Give Education</a></li>
+                    <h4 className="font-semibold text-lg text-gray-400">Services</h4>
+                    <ul className="mt-2 ">
+                        <li><a href="#" className="hover:text-blue-500">Customer Support</a></li>
+                        <li><a href="#" className="hover:text-blue-500">Donation Tracking</a></li>
+                        <li><a href="#" className="hover:text-blue-500">Secure Payments</a></li>
+                        <li><a href="#" className="hover:text-blue-500">Community Impact</a></li>
                     </ul>
                 </div>
 
                 {/* Right Section - Links */}
                 <div>
-                    <h4 className="font-semibold text-lg">Links</h4>
+                    <h4 className="font-semibold text-lg text-gray-400">Links</h4>
                     <ul className="mt-2">
-                        <li><a href="#" className="hover:text-blue-500">Food for Individuals</a></li>
-                        <li><a href="#" className="hover:text-blue-500">Temporary Housing</a></li>
-                        <li><a href="#" className="hover:text-blue-500">Local Shelters</a></li>
-                        <li><a href="#" className="hover:text-blue-500">Natural Disasters</a></li>
+                        <li><a href="#" className="hover:text-blue-500">About Us</a></li>
+                        <li><a href="#" className="hover:text-blue-500">Donate Now</a></li>
+                        <li><a href="#" className="hover:text-blue-500">FAQs</a></li>
+                        <li><a href="#" className="hover:text-blue-500">Privacy Policy</a></li>
                     </ul>
                 </div>
 
                 {/* Contact Section */}
                 <div>
-                    <h4 className="font-semibold text-lg">Contact Info</h4>
+                    <h4 className="font-semibold text-lg text-gray-400">Contact Info</h4>
                     <ul className="mt-2">
                         <li>📞 +088 (246) 642-27-10</li>
                         <li>📧 <a href="mailto:example@mail.com" className="hover:text-blue-500">hopenest@mail.com</a></li>

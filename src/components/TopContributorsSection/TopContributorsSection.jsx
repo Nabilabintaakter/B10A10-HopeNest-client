@@ -31,7 +31,7 @@ const TopContributorsSection = () => {
     return (
         <section className="bg-gray-50 pt-10 pb-16 mb- px-4 md:px-16 ">
             <div className="max-w-6xl mx-auto text-center">
-                <div className="font-sans text-center mb-5 md:mb-9">
+                <div className="font-sans text-center mb-8 md:mb-12">
                     <h1 className="font-semibold text-[#374151] text-3xl md:text-4xl  mb-2 md:mb-4">Our Generous Supporters</h1>
                     <p className="text-sm md:text-base font-sans text-[#1B1A1AB3] w-full md:w-[60%] mx-auto">We are truly grateful for the selfless contributions of our supporters. Their dedication helps us bring hope to those who need it most. Thank you for making a real difference in our mission.</p>
                 </div>
