@@ -10,7 +10,7 @@ const AllCampaigns = () => {
     const {dark} = useContext(AuthContext);
 
     const handleSort = () => {
-        fetch('http://localhost:5000/sortAllCampaigns')
+        fetch('https://b10-a10-hope-nest-server.vercel.app/sortAllCampaigns')
             .then(res => res.json())
             .then(data => {
                 console.log(data);

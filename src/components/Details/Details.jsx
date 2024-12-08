@@ -35,7 +35,7 @@ const Details = () => {
             });
             return;
         }
-        fetch(`http://localhost:5000/myDonations`, {
+        fetch(`https://b10-a10-hope-nest-server.vercel.app/myDonations`, {
             method: "POST",
             headers: {
                 'content-type': 'application/json'
