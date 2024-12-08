@@ -22,7 +22,7 @@ const myDonation = () => {
     }, [user?.email]);
 
     useEffect(() => {
-        document.title = 'MyDonation | HopeNest';
+        document.title = 'MyDonations | HopeNest';
     }, [])
     return (
         <div className='dark:bg-gradient-to-tr dark:from-gray-900 dark:to-gray-700'>
