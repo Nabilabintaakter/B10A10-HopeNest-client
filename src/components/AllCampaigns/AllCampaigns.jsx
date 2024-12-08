@@ -1,6 +1,6 @@
 import { Link, useLoaderData } from 'react-router-dom';
 import { FaSortAmountDownAlt } from "react-icons/fa";
-import { useContext, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../AuthProvider/AuthProvider';
 import { Zoom } from 'react-awesome-reveal';
 
@@ -17,6 +17,9 @@ const AllCampaigns = () => {
                 setCampaigns(data);
             })
     }
+    useEffect(() => {
+        document.title = 'AllCampaigns | HopeNest';
+    }, [])
     return (
         <div className='dark:bg-gradient-to-tr dark:from-gray-900 dark:to-gray-700'>
             <div className="py-10 md:py-14 lg:pb-20 font-sans w-[95%] mx-auto max-w-7xl">

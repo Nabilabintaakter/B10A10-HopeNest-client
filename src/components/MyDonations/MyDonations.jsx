@@ -21,7 +21,9 @@ const myDonation = () => {
         }
     }, [user?.email]);
 
-
+    useEffect(() => {
+        document.title = 'MyDonation | HopeNest';
+    }, [])
     return (
         <div className='dark:bg-gradient-to-tr dark:from-gray-900 dark:to-gray-700'>
             <div className="py-10 md:py-14 lg:pb-20 font-sans w-[95%] mx-auto max-w-7xl">

@@ -82,7 +82,7 @@ const Navbar = () => {
                             anchorId="themeToggleBtn"
                             place="top"
                             content={dark ? "Switch to Light Mode" : "Switch to Dark Mode"}
-                            className={dark ? "tooltip-light" : "tooltip-dark"} // Apply custom styles
+                            className={dark ? "tooltip-light" : "tooltip-dark"} 
                         />
 
                     </div>
@@ -124,9 +124,9 @@ const Navbar = () => {
                     ) : (
                         <div className="flex items-center justify-end gap-2">
                             <div className='flex flex-col md:flex-row gap-1'>
-                                <button id='loginBtn' className="w-20 md:w-24 btn btn-sm md:btn-md rounded-md border-[1px] border-blue-500 text-blue-500 hover:bg-blue-500 hover:text-white transition-all duration-500">
+                                <Link to='/login' id='loginBtn' className="w-20 md:w-24 btn btn-sm md:btn-md rounded-md border-[1px] border-blue-500 text-blue-500 hover:bg-blue-500 hover:text-white transition-all duration-500">
                                     Login
-                                </button>
+                                </Link>
                                 <ReactTooltip
                                     anchorId="loginBtn"
                                     place='top'

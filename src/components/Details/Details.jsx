@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import { useContext, useEffect } from 'react';
 import { Link, useLoaderData, useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import { AuthContext } from '../AuthProvider/AuthProvider';
@@ -57,7 +57,9 @@ const Details = () => {
                 }
             });
     };
-
+    useEffect(() => {
+        document.title = `${campaign.title} | HopeNest`;
+    }, [])
 
     return (
         <div className='dark:bg-gradient-to-tr dark:from-gray-900 dark:to-gray-700'>

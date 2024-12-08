@@ -58,6 +58,9 @@ const MyCampaign = () => {
             }
         });
     }
+    useEffect(() => {
+        document.title = 'MyCampaign | HopeNest';
+    }, [])
 
     return (
         <div className='dark:bg-gradient-to-tr dark:from-gray-900 dark:to-gray-700'>
