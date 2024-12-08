@@ -10,6 +10,12 @@ const AuthProvider = ({ children }) => {
     // const [myEmail, setMyEmail] = useState('')
     const [user, setUser] = useState(null)
     const [loading,setLoading] = useState(true)
+    const [dark, setDark] = useState(false);
+
+    const darkModeHandler = () => {
+        setDark(!dark);
+        document.body.classList.toggle("dark");
+    }
 
     const handleSignUp = (email, password) => {
         setLoading(true)
@@ -43,7 +49,10 @@ const AuthProvider = ({ children }) => {
         setUser,
         setLoading,
         handleUpdateProfile,
-        loading
+        loading,
+        darkModeHandler,
+        dark,
+        setDark
     }
     useEffect(() => {
         const unSubscribe = onAuthStateChanged(auth, (currentUser) => {

@@ -1,13 +1,15 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../AuthProvider/AuthProvider';
 
 const RunningCampaigns = ({ campaigns }) => {
+    const {dark} = useContext(AuthContext);
     return (
-        <div className='my-8 md:my-13 lg:my-20 font-sans w-[95%] mx-auto max-w-7xl'>
+        <div className='py-8 md:py-13 lg:py-20 font-sans w-[95%] mx-auto max-w-7xl'>
             <div className="flex justify-center items-center mb-8 md:mb-12">
                 <div className="text-center">
-                    <h1 className="font-semibold text-[#374151] text-3xl md:text-4xl  mb-2 md:mb-4">Running Campaigns: Make an Impact Today</h1>
-                    <p className="text-sm md:text-base font-sans text-[#1B1A1AB3] w-full md:w-[70%] mx-auto">Explore active campaigns needing your support! Contribute before their deadlines and make a meaningful impact today!</p>
+                    <h1 className="font-semibold text-[#374151] dark:text-white text-3xl md:text-4xl  mb-2 md:mb-4">Running Campaigns: Make an Impact Today</h1>
+                    <p className="text-sm md:text-base font-sans text-[#1B1A1AB3] dark:text-gray-300 w-full md:w-[70%] mx-auto">Explore active campaigns needing your support! Contribute before their deadlines and make a meaningful impact today!</p>
                 </div>
             </div>
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5'>

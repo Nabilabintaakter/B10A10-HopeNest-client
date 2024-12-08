@@ -1,19 +1,20 @@
 import logo from '../../assets/logo.png';
-import { Link, Navigate, NavLink, useLocation, useNavigate } from 'react-router-dom';
-import { IoMenu } from "react-icons/io5";
-import { useContext } from 'react';
+import { Link, NavLink } from 'react-router-dom';
+import { IoMenu, IoMoon, IoSunny } from "react-icons/io5";
+import { useContext, useState } from 'react';
 import { AuthContext } from '../AuthProvider/AuthProvider';
 import { BiLogOut } from 'react-icons/bi';
 import userPro from '../../assets/userPro.webp'
 
 const Navbar = () => {
+    const {dark, darkModeHandler} = useContext(AuthContext);
     const scrollToTop = () => {
         window.scrollTo({
             top: 0,
             behavior: 'smooth',
         });
     };
-    const { pathname } = useLocation()
+
     const { user, handleSignOut } = useContext(AuthContext);
     const links = <>
         <li><NavLink onClick={scrollToTop}
@@ -35,15 +36,16 @@ const Navbar = () => {
             isActive ? "text-[#FFA415] font-bold drop-shadow-[0_5px_5px_rgba(0,0,0.4,0.4)]" : ''
         } to='/myDonations'>My Donations</NavLink></li>
     </>
+
     return (
-        <div className='font-sans bg-white/60 z-50 fixed backdrop-blur-md w-full'>
+        <div className='dark:bg-gray-700/90 dark:text-white font-sans bg-white/60 z-50 fixed backdrop-blur-md w-full'>
             <div className="navbar w-[98%]  mx-auto">
                 <div className="navbar-start">
                     <div className="drawer w-[100%] lg:hidden">
                         <input id="my-drawer" type="checkbox" className="drawer-toggle" />
                         <div className="drawer-content">
                             {/* Page content here */}
-                            <label htmlFor="my-drawer" className="drawer-button"><IoMenu className='text-3xl' /></label>
+                            <label htmlFor="my-drawer" className="drawer-button"><IoMenu className='text-3xl dark:text-white' /></label>
                         </div>
                         <div className="drawer-side">
                             <label htmlFor="my-drawer" aria-label="close sidebar" className="drawer-overlay bg-white"></label>
@@ -53,15 +55,26 @@ const Navbar = () => {
                             </ul>
                         </div>
                     </div>
-                    <Link to='/'><div className='w-44 hidden lg:block'><img className='w-full' src={logo} alt="" /></div></Link>
+                    <Link to='/'><div className='w-44 hidden lg:block'><img className='w-full dark:bg-white p-2 rounded-tl-xl rounded-br-xl' src={logo} alt="" /></div></Link>
                 </div>
                 <div className="navbar-center ">
                     <ul className="hidden lg:flex menu menu-horizontal px-1">
                         {links}
                     </ul>
-                    <Link to='/'><div className='w-44 block lg:hidden'><img className='w-full' src={logo} alt="" /></div></Link>
+                    <Link to='/'><div className='w-44 block lg:hidden'><img className='w-full dark:bg-white p-2 rounded-tl-xl rounded-br-xl' src={logo} alt="" /></div></Link>
                 </div>
                 <div className="navbar-end flex justify-end">
+                    <div className='mr-2 md:mr-4'>
+                        <button onClick={() => darkModeHandler()}>
+                            {
+
+                                dark && <IoSunny className='text-2xl md:text-3xl text-yellow-300' />
+                            }
+                            {
+                                !dark && <IoMoon className='text-2xl md:text-3xl text-blue-900'/>
+                            }
+                        </button>
+                    </div>
                     {user ? (
                         <div className="relative group">
                             <div className="btn btn-primary btn-circle avatar">

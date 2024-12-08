@@ -9,9 +9,6 @@ import 'swiper/css/effect-fade';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 
-
-
-// import required modules
 import { Autoplay, Pagination, Navigation,EffectFade } from 'swiper/modules';
 import { Link } from 'react-router-dom';
 
@@ -23,7 +20,7 @@ const Banner = () => {
                 effect={'fade'} 
                 navigation={true}
                 autoplay={{
-                    delay: 3500,
+                    delay: 3000,
                     disableOnInteraction: false,
                 }}
                 pagination={{
