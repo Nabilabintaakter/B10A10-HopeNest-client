@@ -9,9 +9,7 @@ const Details = () => {
     const campaign = useLoaderData();
     const navigate = useNavigate();
 
-    const handleDonate = campaign => {
-        console.log('donate for :', campaign);
-
+    const handleDonate = campaign => {    
         const campaignData = {
             thumbnail: campaign.thumbnail,
             title: campaign.title,
@@ -23,7 +21,19 @@ const Details = () => {
             name: campaign.name,
             donorsEmail: user?.email
         };
+    
+        const currentDate = new Date();
+        const campaignDeadline = new Date(campaign.deadline);
 
+        if (currentDate > campaignDeadline) {
+            Swal.fire({
+                icon: "error",
+                title: "The deadline for this campaign has passed. You can't donate.",
+                showConfirmButton: false,
+                timer: 3000
+            });
+            return;
+        }
         fetch(`http://localhost:5000/myDonations`, {
             method: "POST",
             headers: {
@@ -46,6 +56,7 @@ const Details = () => {
                 }
             });
     };
+    
 
     return (
         <div className='font-inter w-[95%] lg:w-[85%] lg:max-w-7xl mx-auto pt-2 md:pt-10 md:pb-24'>
