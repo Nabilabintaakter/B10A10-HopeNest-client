@@ -13,7 +13,6 @@ const AllCampaigns = () => {
         fetch('https://b10-a10-hope-nest-server.vercel.app/sortAllCampaigns')
             .then(res => res.json())
             .then(data => {
-                console.log(data);
                 setCampaigns(data);
             })
     }

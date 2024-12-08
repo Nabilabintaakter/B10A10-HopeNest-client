@@ -19,7 +19,7 @@ const AddCampaign = () => {
         const name = form.name.value;
 
         const newCampaign = { thumbnail, title, type, description, amount, deadline, email, name }
-        console.log(newCampaign);
+
 
         // send data to db
         fetch('https://b10-a10-hope-nest-server.vercel.app/campaigns', {
@@ -31,7 +31,6 @@ const AddCampaign = () => {
         })
             .then(res => res.json())
             .then(data => {
-                console.log(data);
                 if (data.insertedId) {
                     Swal.fire({
                         icon: "success",

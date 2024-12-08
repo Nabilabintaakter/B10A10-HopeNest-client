@@ -23,7 +23,6 @@ const UpdateCampaign = () => {
         const name = form.name.value;
 
         const updatedCampaign = { thumbnail, title, type, description, amount, deadline, email, name }
-        console.log(updatedCampaign);
 
         // send data to server
         fetch(`https://b10-a10-hope-nest-server.vercel.app/campaigns/${_id}`, {
@@ -35,7 +34,6 @@ const UpdateCampaign = () => {
         })
             .then(res => res.json())
             .then(data => {
-                console.log(data);
                 if (data.modifiedCount > 0) {
                     const Toast = Swal.mixin({
                         toast: true,

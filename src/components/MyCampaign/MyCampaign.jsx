@@ -16,7 +16,6 @@ const MyCampaign = () => {
             fetch(`https://b10-a10-hope-nest-server.vercel.app/myCampaigns?email=${user.email}`)
                 .then((res) => res.json())
                 .then((data) => {
-                    console.log(data);
                     setCampaigns(data);
                     setLoading(false);
                 })
@@ -28,7 +27,6 @@ const MyCampaign = () => {
 
 
     const handleDelete = id => {
-        console.log(id);
         Swal.fire({
             title: "Are you sure?",
             text: "You won't be able to revert this!",
@@ -44,7 +42,6 @@ const MyCampaign = () => {
                 })
                     .then(res => res.json())
                     .then(data => {
-                        console.log(data);
                         if (data.deletedCount > 0) {
                             Swal.fire({
                                 title: "Deleted!",

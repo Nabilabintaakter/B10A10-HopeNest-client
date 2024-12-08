@@ -13,7 +13,6 @@ const myDonation = () => {
             fetch(`https://b10-a10-hope-nest-server.vercel.app/myDonations?email=${user.email}`)
                 .then((res) => res.json())
                 .then((data) => {
-                    console.log(data);
                     setDonations(data);
                     setLoading(false);
                 })
