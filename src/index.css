@@ -15,3 +15,38 @@
 .font-inter{
   font-family: "Inter", sans-serif;
 }
+.tooltip-custom {
+  color: #fff !important; 
+  border-radius: 5px !important; 
+  font-size: 14px !important; 
+  padding: 8px 12px !important; 
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1) !important; 
+  max-width: 200px !important;
+  text-align: center !important; 
+}
+.logIn{
+  background-color: #1E3A8A !important;
+}
+.logOut{
+  background-color: #34bb40 !important;
+}
+.see{
+  background-color: #34bb40 !important;
+}
+.tooltip-dark {
+  background-color: #1e3a8a !important; 
+  color: white;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 0.875rem; 
+  font-weight: 500;
+}
+
+.tooltip-light {
+  background-color: #fde047 !important; 
+  color: #374151; 
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  font-weight: 500;
+}

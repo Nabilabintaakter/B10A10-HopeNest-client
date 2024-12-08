@@ -19,7 +19,7 @@ const AllCampaigns = () => {
     }
     return (
         <div className='dark:bg-gradient-to-tr dark:from-gray-900 dark:to-gray-700'>
-            <div className="pb-14 md:py-14 lg:pb-20 font-sans w-[95%] mx-auto max-w-7xl">
+            <div className="py-10 md:py-14 lg:pb-20 font-sans w-[95%] mx-auto max-w-7xl">
                 <div className="flex justify-center items-center mb-6 md:mb-3">
                     <Zoom triggerOnce duration={2000}>
                     <div className="text-center">

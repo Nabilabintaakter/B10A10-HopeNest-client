@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../AuthProvider/AuthProvider';
 import { Fade, Zoom } from 'react-awesome-reveal';
+import { Tooltip as ReactTooltip } from 'react-tooltip';
 
 const RunningCampaigns = ({ campaigns }) => {
     const { dark } = useContext(AuthContext);
@@ -26,18 +27,29 @@ const RunningCampaigns = ({ campaigns }) => {
                                     alt="Campaign Thumbnail"
                                     className="w-full h-full object-cover rounded-t-lg"
                                 />
-                                <div className="absolute top-4 left-4 bg-blue-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                                <div
+                                    id={`campaignType-${campaign._id}`}
+                                    className="absolute top-4 left-4 bg-blue-500 text-white px-3 py-1 rounded-full text-sm font-semibold cursor-pointer"
+                                >
                                     {campaign.type}
                                 </div>
+                                <ReactTooltip
+                                    anchorId={`campaignType-${campaign._id}`}
+                                    place="top"
+                                    content={`Category: ${campaign.type}`}
+                                    className="tooltip-custom"
+                                />
                             </div>
 
                             {/* Card Content */}
                             <div className="p-6 flex flex-col justify-between flex-grow">
                                 {/* Title Section */}
-                                <h2 className="text-2xl font-bold text-gray-800 hover:text-blue-600 transition-colors duration-200 mb-4">
+                                <h2
+                                    id={`campaignTitle-${campaign._id}`}
+                                    className="text-2xl font-bold text-gray-800 hover:text-blue-600 transition-colors duration-200 mb-4"
+                                >
                                     {campaign.title}
                                 </h2>
-
                                 {/* Amount and Deadline */}
                                 <div className="flex justify-between items-center text-gray-700 mb-4">
                                     <div className="text-lg font-semibold">
@@ -52,14 +64,24 @@ const RunningCampaigns = ({ campaigns }) => {
                                 {/* Action Button */}
                                 <div className="mt-4">
                                     <Fade triggerOnce duration={2000}>
-                                    <Link to={`/campaigns/${campaign._id}`}
-                                        className="w-full block bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 rounded-md text-center transition-colors duration-300">
-                                        See More
-                                    </Link>
+                                        <Link
+                                            id={`seeMore-${campaign._id}`}
+                                            to={`/campaigns/${campaign._id}`}
+                                            className="w-full block bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 rounded-md text-center transition-colors duration-300"
+                                        >
+                                            See More
+                                        </Link>
+                                        <ReactTooltip
+                                            anchorId={`seeMore-${campaign._id}`}
+                                            place="bottom"
+                                            content="Click to view full campaign details"
+                                            className="tooltip-custom see"
+                                        />
                                     </Fade>
                                 </div>
                             </div>
                         </div>
+
                     )
                 }
             </div>

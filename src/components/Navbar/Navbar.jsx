@@ -4,10 +4,11 @@ import { IoMenu, IoMoon, IoSunny } from "react-icons/io5";
 import { useContext, useState } from 'react';
 import { AuthContext } from '../AuthProvider/AuthProvider';
 import { BiLogOut } from 'react-icons/bi';
-import userPro from '../../assets/userPro.webp'
+import userPro from '../../assets/userPro.webp';
+import { Tooltip as ReactTooltip } from 'react-tooltip';
 
 const Navbar = () => {
-    const {dark, darkModeHandler} = useContext(AuthContext);
+    const { dark, darkModeHandler } = useContext(AuthContext);
     const scrollToTop = () => {
         window.scrollTo({
             top: 0,
@@ -65,15 +66,25 @@ const Navbar = () => {
                 </div>
                 <div className="navbar-end flex justify-end">
                     <div className='mr-2 md:mr-4'>
-                        <button onClick={() => darkModeHandler()}>
-                            {
-
-                                dark && <IoSunny className='text-2xl md:text-3xl text-yellow-300' />
-                            }
-                            {
-                                !dark && <IoMoon className='text-2xl md:text-3xl text-blue-900'/>
-                            }
+                        <button
+                            onClick={() => darkModeHandler()}
+                            id="themeToggleBtn"
+                            className={`p-2 rounded-full ${dark ? "bg-yellow-300" : "bg-blue-900"
+                                } transition-all duration-300`}
+                        >
+                            {dark ? (
+                                <IoSunny className="text-lg md:text-2xl text-white" />
+                            ) : (
+                                <IoMoon className="text-lg md:text-2xl text-white" />
+                            )}
                         </button>
+                        <ReactTooltip
+                            anchorId="themeToggleBtn"
+                            place="top"
+                            content={dark ? "Switch to Light Mode" : "Switch to Dark Mode"}
+                            className={dark ? "tooltip-light" : "tooltip-dark"} // Apply custom styles
+                        />
+
                     </div>
                     {user ? (
                         <div className="relative group">
@@ -113,15 +124,26 @@ const Navbar = () => {
                     ) : (
                         <div className="flex items-center justify-end gap-2">
                             <div className='flex flex-col md:flex-row gap-1'>
-                                <Link to="/login">
-                                    <button className="w-20 md:w-24 btn btn-sm md:btn-md rounded-md border-[1px] border-blue-500 text-blue-500 hover:bg-blue-500 hover:text-white transition-all duration-500">
-                                        Login
-                                    </button>
-                                </Link>
+                                <button id='loginBtn' className="w-20 md:w-24 btn btn-sm md:btn-md rounded-md border-[1px] border-blue-500 text-blue-500 hover:bg-blue-500 hover:text-white transition-all duration-500">
+                                    Login
+                                </button>
+                                <ReactTooltip
+                                    anchorId="loginBtn"
+                                    place='top'
+                                    content='Click to log in to your account!'
+                                    className="tooltip-custom logIn"
+                                />
+
                                 <Link to="/signUp">
-                                    <button className="w-[82px] md:w-24 btn btn-sm md:btn-md rounded-md bg-green-500 text-white hover:bg-green-600 transition-all duration-500">
+                                    <button id='logoutBtn' className="w-[82px] md:w-24 btn btn-sm md:btn-md rounded-md bg-green-500 text-white hover:bg-green-600 transition-all duration-500">
                                         Sign Up
                                     </button>
+                                    <ReactTooltip
+                                        anchorId="logoutBtn"
+                                        place='right'
+                                        content='Click to create your account!'
+                                        className="tooltip-custom logOut"
+                                    />
                                 </Link>
                             </div>
                         </div>
