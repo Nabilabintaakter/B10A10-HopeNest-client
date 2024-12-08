@@ -1,8 +1,9 @@
 import React, { useContext } from 'react';
 import { AuthContext } from '../AuthProvider/AuthProvider';
+import { Zoom } from 'react-awesome-reveal';
 
 const TopContributorsSection = () => {
-    const {dark} = useContext(AuthContext);
+    const { dark } = useContext(AuthContext);
     const contributors = [
         {
             name: 'Jabir Ahmed',
@@ -33,10 +34,12 @@ const TopContributorsSection = () => {
     return (
         <section className=" pt-10 pb-16 md:pb-24 px-4 md:px-16 ">
             <div className="max-w-6xl mx-auto text-center">
-                <div className="font-sans text-center mb-8 md:mb-12">
-                    <h1 className="font-semibold text-[#374151] dark:text-white text-3xl md:text-4xl  mb-2 md:mb-4">Our Generous Supporters</h1>
-                    <p className="text-sm md:text-base font-sans text-[#1B1A1AB3] dark:text-gray-300 w-full md:w-[60%] mx-auto">We are truly grateful for the selfless contributions of our supporters. Their dedication helps us bring hope to those who need it most. Thank you for making a real difference in our mission.</p>
-                </div>
+                <Zoom triggerOnce duration={2000}>
+                    <div className="font-sans text-center mb-8 md:mb-12">
+                        <h1 className="font-semibold text-[#374151] dark:text-white text-3xl md:text-4xl  mb-2 md:mb-4">Our Generous Supporters</h1>
+                        <p className="text-sm md:text-base font-sans text-[#1B1A1AB3] dark:text-gray-300 w-full md:w-[60%] mx-auto">We are truly grateful for the selfless contributions of our supporters. Their dedication helps us bring hope to those who need it most. Thank you for making a real difference in our mission.</p>
+                    </div>
+                </Zoom>
                 <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
                     {contributors.map((contributor, index) => (
                         <div

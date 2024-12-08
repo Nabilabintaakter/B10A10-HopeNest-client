@@ -5,6 +5,7 @@ import { MdModeEdit } from "react-icons/md";
 import { RiDeleteBin6Fill } from "react-icons/ri";
 import { HiDotsHorizontal } from "react-icons/hi";
 import Swal from 'sweetalert2';
+import { Zoom } from 'react-awesome-reveal';
 
 const MyCampaign = () => {
     const { user, setLoading, dark } = useContext(AuthContext);
@@ -61,12 +62,14 @@ const MyCampaign = () => {
     return (
         <div className='dark:bg-gradient-to-tr dark:from-gray-900 dark:to-gray-700'>
             <div className="pb-14 md:py-14 lg:mb-20 font-sans w-[95%] mx-auto max-w-7xl">
+                <Zoom triggerOnce duration={2000}>
                 <div className="flex justify-center items-center mb-10 md:mb-12">
                     <div className="text-center">
                         <h1 className="font-semibold text-[#374151] dark:text-white text-3xl md:text-4xl mb-2 md:mb-4">Manage My Campaigns</h1>
                         <p className="text-sm md:text-base font-sans text-[#1B1A1AB3] dark:text-gray-300 w-full md:w-[70%] mx-auto">View and manage the campaigns you’ve created. Update details, delete campaigns, or review essential information—all in one place.</p>
                     </div>
                 </div>
+                </Zoom>
 
                 {/* Make table scrollable on smaller screens */}
                 <div className="overflow-x-auto">

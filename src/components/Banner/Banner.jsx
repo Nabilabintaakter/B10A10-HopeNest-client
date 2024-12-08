@@ -1,6 +1,4 @@
-import slider1 from '../../assets/slider1.avif'
-import slider2 from '../../assets/slider2.jpg'
-import slider3 from '../../assets/slider3.jpg'
+import { Fade } from "react-awesome-reveal";
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 // Import Swiper styles
@@ -9,7 +7,7 @@ import 'swiper/css/effect-fade';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 
-import { Autoplay, Pagination, Navigation,EffectFade } from 'swiper/modules';
+import { Autoplay, Pagination, Navigation, EffectFade } from 'swiper/modules';
 import { Link } from 'react-router-dom';
 
 const Banner = () => {
@@ -17,7 +15,7 @@ const Banner = () => {
         <div>
             <Swiper
                 spaceBetween={30}
-                effect={'fade'} 
+                effect={'fade'}
                 navigation={true}
                 autoplay={{
                     delay: 3000,
@@ -26,7 +24,7 @@ const Banner = () => {
                 pagination={{
                     clickable: true,
                 }}
-                modules={[Autoplay, Navigation, Pagination, EffectFade]} 
+                modules={[Autoplay, Navigation, Pagination, EffectFade]}
                 className="mySwiper"
             >
 
@@ -37,15 +35,17 @@ const Banner = () => {
                             backgroundImage: `url(https://i.ibb.co.com/hV3NfQD/11.webp)`,
                         }}>
                         <div className="hero-overlay bg-opacity-80"></div>
-                        <div className="hero-content text-neutral-content text-center">
-                            <div className="text-white">
-                                <h1 className=" w-full mb-5 text-3xl md:text-4xl font-bold max-w-5xl ">SUPPORT A SHARED WORKSPACE FOR STARTUPS</h1>
-                                <p className="mb-5 text-sm md:text-base font-sans max-w-3xl mx-auto">
-                                Help us build a dynamic and inclusive space designed to empower aspiring entrepreneurs. This is more than just a workplace—it's a hub for creativity, collaboration, and innovation, where individuals can share ideas, develop skills, and bring their visions to life.
-                                </p>
-                                <Link to='/campaigns/675309de74dab0e432970d6a' className="font-sans btn bg-[#FFA71D] border-none">Join the mission</Link>
+                        <Fade cascade damping={0.1} duration={2000}>
+                            <div className="hero-content text-neutral-content text-center">
+                                <div className="text-white">
+                                    <h1 className=" w-full mb-5 text-3xl md:text-4xl font-bold max-w-5xl ">SUPPORT A SHARED WORKSPACE FOR STARTUPS</h1>
+                                    <p className="mb-5 text-sm md:text-base font-sans max-w-3xl mx-auto">
+                                        Help us build a dynamic and inclusive space designed to empower aspiring entrepreneurs. This is more than just a workplace—it's a hub for creativity, collaboration, and innovation, where individuals can share ideas, develop skills, and bring their visions to life.
+                                    </p>
+                                    <Link to='/campaigns/675309de74dab0e432970d6a' className="font-sans btn bg-[#FFA71D] border-none">Join the mission</Link>
+                                </div>
                             </div>
-                        </div>
+                        </Fade>
                     </div>
                 </SwiperSlide>
                 <SwiperSlide><div
@@ -54,15 +54,17 @@ const Banner = () => {
                         backgroundImage: `url(https://i.ibb.co.com/VDtRZb0/10.webp)`,
                     }}>
                     <div className="hero-overlay bg-opacity-80"></div>
-                    <div className="hero-content text-neutral-content text-center">
-                        <div className="text-white">
-                            <h1 className=" w-full mb-5 text-3xl md:text-4xl font-bold max-w-5xl">EMERGENCY FUNDS FOR FIRE VICTIMS</h1>
-                            <p className="mb-5 text-sm md:text-base font-sans max-w-3xl mx-auto">
-                            Help families rebuild their lives after losing their homes in a devastating fire. Your generous contributions can provide them with the resources they need to recover, rebuild, and start anew. Every donation counts!
-                            </p>
-                            <Link to='/campaigns/6753094f74dab0e432970d69' className="font-sans btn bg-[#FFA71D] border-none">Support a Family</Link>
+                    <Fade>
+                        <div className="hero-content text-neutral-content text-center">
+                            <div className="text-white">
+                                <h1 className=" w-full mb-5 text-3xl md:text-4xl font-bold max-w-5xl">EMERGENCY FUNDS FOR FIRE VICTIMS</h1>
+                                <p className="mb-5 text-sm md:text-base font-sans max-w-3xl mx-auto">
+                                    Help families rebuild their lives after losing their homes in a devastating fire. Your generous contributions can provide them with the resources they need to recover, rebuild, and start anew. Every donation counts!
+                                </p>
+                                <Link to='/campaigns/6753094f74dab0e432970d69' className="font-sans btn bg-[#FFA71D] border-none">Support a Family</Link>
+                            </div>
                         </div>
-                    </div>
+                    </Fade>
                 </div>
                 </SwiperSlide>
                 <SwiperSlide>
@@ -72,15 +74,17 @@ const Banner = () => {
                             backgroundImage: `url(https://i.ibb.co.com/V9k0GJ6/5.webp)`,
                         }}>
                         <div className="hero-overlay bg-opacity-80"></div>
-                        <div className="hero-content text-neutral-content text-center">
-                            <div className="text-white">
-                                <h1 className=" w-full mb-5 text-3xl md:text-4xl font-bold max-w-5xl">GREEN SPACE FOR ALL</h1>
-                                <p className="text-sm md:text-base mb-5 font-sans max-w-3xl mx-auto">
-                                Join us in creating a community garden that promotes sustainable urban living. By supporting this initiative, you help provide a green space for residents to grow their own food, connect with nature, and foster a sense of community in our city.
-                                </p>
-                                <Link to='/campaigns/675306f974dab0e432970d64' className="font-sans btn bg-[#FFA71D] border-none">Contribute Now</Link>
+                        <Fade>
+                            <div className="hero-content text-neutral-content text-center">
+                                <div className="text-white">
+                                    <h1 className=" w-full mb-5 text-3xl md:text-4xl font-bold max-w-5xl">GREEN SPACE FOR ALL</h1>
+                                    <p className="text-sm md:text-base mb-5 font-sans max-w-3xl mx-auto">
+                                        Join us in creating a community garden that promotes sustainable urban living. By supporting this initiative, you help provide a green space for residents to grow their own food, connect with nature, and foster a sense of community in our city.
+                                    </p>
+                                    <Link to='/campaigns/675306f974dab0e432970d64' className="font-sans btn bg-[#FFA71D] border-none">Contribute Now</Link>
+                                </div>
                             </div>
-                        </div>
+                        </Fade>
                     </div>
                 </SwiperSlide>
             </Swiper>

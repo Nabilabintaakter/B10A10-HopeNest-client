@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../AuthProvider/AuthProvider';
 import { FaTag, FaMoneyBillWave, FaClock, FaCalendarAlt, FaClipboardList } from "react-icons/fa";
 import { Link } from 'react-router-dom';
+import { Fade, Zoom } from 'react-awesome-reveal';
 
 const myDonation = () => {
     const { user, setLoading, dark } = useContext(AuthContext);
@@ -24,6 +25,7 @@ const myDonation = () => {
     return (
         <div className='dark:bg-gradient-to-tr dark:from-gray-900 dark:to-gray-700'>
             <div className="pb-14 md:py-14 lg:pb-20 font-sans w-[95%] mx-auto max-w-7xl">
+                <Zoom triggerOnce duration={2000}>
                 <div className="flex justify-center items-center mb-10 md:mb-12">
                     <div className="text-center">
                         <h1 className="font-semibold text-[#374151] dark:text-white text-3xl md:text-4xl mb-2 md:mb-4">My Donation History</h1>
@@ -32,10 +34,12 @@ const myDonation = () => {
                         </p>
                     </div>
                 </div>
+                </Zoom>
 
                 {/* Conditional rendering based on donations */}
                 {donations.length === 0 ? (
-                    <div className="text-center mt-20 space-y-5 flex flex-col justify-center items-center">
+                    <Fade triggerOnce duration={2000}>
+                        <div className="text-center mt-20 space-y-5 flex flex-col justify-center items-center">
                         {/* Icon */}
                         <div className="flex justify-center">
                             <div className="bg-orange-100 text-orange-500 p-4 rounded-full shadow-md">
@@ -65,10 +69,10 @@ const myDonation = () => {
                             </button>
                         </Link>
                     </div>
-
-
+                    </Fade>
                 ) : (
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+                    <Fade triggerOnce duration={2000}>
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
                         {donations.map(donation => (
                             <div key={donation._id} className="card bg-white shadow-md rounded-lg overflow-hidden hover:shadow-xl transform group">
                                 {/* Image Section */}
@@ -113,6 +117,7 @@ const myDonation = () => {
                             </div>
                         ))}
                     </div>
+                    </Fade>
                 )}
             </div>
         </div>
