@@ -25,8 +25,8 @@ const myDonation = () => {
         <div className="mb-14 md:my-14 lg:mb-20 font-sans w-[95%] mx-auto max-w-7xl">
             <div className="flex justify-center items-center mb-10 md:mb-12">
                 <div className="text-center">
-                    <h1 className="font-semibold text-[#374151] text-3xl md:text-4xl mb-2 md:mb-4">Manage My donations</h1>
-                    <p className="text-sm md:text-base font-sans text-[#1B1A1AB3] w-full md:w-[70%] mx-auto">View and manage the donations you’ve created. Update details, delete donations, or review essential information—all in one place.</p>
+                    <h1 className="font-semibold text-[#374151] text-3xl md:text-4xl mb-2 md:mb-4">My Donation History</h1>
+                    <p className="text-sm md:text-base font-sans text-[#1B1A1AB3] w-full md:w-[70%] mx-auto">Explore and manage your past donations effortlessly. Keep track of your contributions, monitor the positive change you're creating, and continue to support the causes that matter most to you.</p>
                 </div>
             </div>
 

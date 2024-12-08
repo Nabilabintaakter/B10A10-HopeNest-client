@@ -1,14 +1,29 @@
 import { Link, useLoaderData } from 'react-router-dom';
+import { FaSortAmountDownAlt } from "react-icons/fa";
+import { useState } from 'react';
 
 const AllCampaigns = () => {
-    const campaigns = useLoaderData();
+    const allCampaigns = useLoaderData();
+    const [campaigns, setCampaigns] = useState(allCampaigns)
+
+    const handleSort = ()=>{
+        fetch('http://localhost:5000/sortAllCampaigns')
+        .then(res=>res.json())
+        .then(data=>{
+            console.log(data);
+            setCampaigns(data);
+        })
+    }
     return (
         <div className="mb-14 md:my-14 lg:mb-20 font-sans w-[95%] mx-auto max-w-7xl">
-            <div className="flex justify-center items-center mb-10 md:mb-12">
+            <div className="flex justify-center items-center mb-2 md:mb-3">
                 <div className="text-center">
                     <h1 className="font-semibold text-[#374151] text-3xl md:text-4xl mb-2 md:mb-4">Explore All Campaigns</h1>
                     <p className="text-sm md:text-base font-sans text-[#1B1A1AB3] w-full md:w-[70%] mx-auto">Explore a variety of impactful campaigns dedicated to making a difference. Your support can help bring positive change to communities and causes in need.</p>
                 </div>
+            </div>
+            <div className='flex justify-end mb-2'>
+                <button onClick={handleSort} className='btn bg-gradient-to-r from-blue-300 to-pink-400 border-none hover:text-white transition-all duration-300'><FaSortAmountDownAlt />Sort by Amount</button>
             </div>
 
             {/* Make table scrollable on smaller screens */}
