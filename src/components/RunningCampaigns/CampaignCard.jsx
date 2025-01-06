@@ -6,7 +6,7 @@ const CampaignCard = ({ campaign }) => {
     return (
         <div  className=" bg-white shadow-xl rounded-md overflow-hidden hover:shadow-2xl transition-shadow duration-300 flex flex-col">
             {/* Thumbnail Section */}
-            <div className="relative w-full h-44 md:h-48 lg:h-52">
+            <div className="relative w-full h-44">
                 <img
                     src={campaign?.thumbnail}
                     alt="Campaign Thumbnail"

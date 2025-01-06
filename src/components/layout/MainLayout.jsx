@@ -11,8 +11,7 @@ const MainLayout = () => {
         <div>
             <ScrollToTop />
             <div
-                className={`${user ? "h-[71px] md:h-[68px]" : "h-[84px] md:h-[68px]"
-                    }`}
+                className={`h-[71px] md:h-[68px]`}
             >
                 <Navbar />
             </div>

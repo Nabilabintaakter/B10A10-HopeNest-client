@@ -3,6 +3,7 @@ import { Link, useLoaderData, useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import { AuthContext } from '../AuthProvider/AuthProvider';
 import { FaUser, FaEnvelope, FaMoneyBillAlt, FaCalendarAlt, FaTag, FaInfoCircle, FaFileAlt } from 'react-icons/fa';
+import Container from '../Container/Container';
 
 const Details = () => {
     const { user } = useContext(AuthContext);
@@ -62,51 +63,88 @@ const Details = () => {
     }, [])
 
     return (
-        <div className='dark:bg-gradient-to-tr dark:from-gray-900 dark:to-gray-700'>
-            <div className='font-inter w-[95%] lg:w-[85%] lg:max-w-7xl mx-auto pt-2 md:pt-10 md:pb-24'>
-                <div className="flex flex-col lg:flex-row h-auto lg:h-[420px] rounded-md md:rounded-2xl bg-[#ffb94944] dark:bg-white shadow-xl mb-8 hover:shadow-2xl transform hover:scale-105 transition-all duration-500">
-                    <figure className='w-full lg:w-2/6'>
-                        <img
-                            className="w-full h-full object-cover rounded-t-md md:rounded-t-2xl lg:rounded-l-2xl lg:rounded-r-none"
-                            src={campaign?.thumbnail}
-                            alt="campaign thumbnail"
-                        />
-                    </figure>
-                    <div className="w-full lg:w-4/6 p-5 lg:px-6 flex flex-col gap-3 lg:justify-between">
-                        <h2 className="text-2xl md:text-3xl font-bold text-gray-800 mb-3 md:mb-5 flex items-center">
-                            <FaTag className="mr-2 text-green-600" /> {campaign?.title}
-                        </h2>
-                        <p className="text-sm xl:text-base text-gray-800 font-semibold flex items-center">
-                            <FaInfoCircle className="mr-2 text-gray-700" /> Type: <span className="font-inter font-normal text-gray-700 ml-1">{campaign?.type}</span>
-                        </p>
-                        <div className='flex items-start'>
-                            <p className="text-sm xl:text-base text-gray-800 font-semibold flex items-center">
-                                <FaFileAlt className="mr-2 text-gray-700" /> Description:
-                            </p>
-                            <span className="text-sm xl:text-base font-inter font-normal text-gray-700 ml-1">{campaign?.description}</span>
-                        </div>
-                        <p className="text-sm xl:text-base text-gray-800 font-semibold flex items-center">
-                            <FaMoneyBillAlt className="mr-2 text-gray-700" /> Minimum Donation: <span className="font-inter font-normal text-gray-700 ml-1">{campaign?.amount}Tk.</span>
-                        </p>
-                        <p className="text-sm xl:text-base text-gray-800 font-semibold flex items-center">
-                            <FaCalendarAlt className="mr-2 text-gray-700" /> Ends in: <span className="font-inter font-normal text-gray-700 ml-1">{new Date(campaign?.deadline).toLocaleDateString()}</span>
-                        </p>
-                        <p className="text-sm xl:text-base text-gray-800 font-semibold flex items-center">
-                            <FaUser className="mr-2 text-gray-700" /> Organizer: <span className="font-inter font-normal text-gray-700 ml-1">{campaign?.name}</span>
-                        </p>
-                        <p className="text-sm xl:text-base text-gray-800 font-semibold mb-3 md:mb-6 flex items-center">
-                            <FaEnvelope className="mr-2 text-gray-700" /> Organizer Email: <span className="font-inter font-normal text-blue-700 ml-1 underline">{campaign?.email}</span>
-                        </p>
-                        <button onClick={() => handleDonate(campaign)} className="font-inter btn btn-sm md:btn-md border-none bg-green-500 hover:bg-green-600 text-white text-sm xl:text-base font-normal rounded-md w-full transform transition duration-300">
-                            Donate
-                        </button>
-                    </div>
-                </div>
-                <Link to='/' className='btn mb-12 shadow-none mx-auto w-fit font-libre bg-transparent border-none flex md:hidden gap-2 items-center'>
-                    <span className='text-[#374151] text-2xl drop-shadow-[0_4px_6px_rgba(0,0,0,0.3)] underline'>Back to home</span>
-                </Link>
-            </div>
+<div className='bg-[#EFF0F5] dark:bg-gradient-to-tr dark:from-gray-900 dark:to-gray-700'>
+  <Container>
+    <div className='font-inter py-5 md:py-14'>
+      {/* Campaign Card */}
+      <div className="flex flex-col md:flex-row h-auto lg:h-[420px] p-2 bg-white shadow-lg group transform transition-all duration-500 hover:shadow-2xl">
+        {/* Thumbnail */}
+        <figure className='w-full lg:w-2/6 overflow-hidden'>
+          <img
+            className="w-full h-full object-cover transform group-hover:scale-105 transition-all ease-in-out duration-1000"
+            src={campaign?.thumbnail}
+            alt="campaign thumbnail"
+          />
+        </figure>
+
+        {/* Details Section */}
+        <div className="w-full lg:w-4/6 mt-4 md:mt-0 md:mx-6 flex flex-col gap-4 lg:gap-2 justify-between">
+          {/* Campaign Title */}
+          <h2 className="text-2xl md:text-3xl font-semibold text-gray-800">
+            {campaign?.title}
+          </h2>
+
+          {/* Campaign Type */}
+            <span className="badge bg-orange-200 border-[1px] border-orange-500 text-xs text-gray-600 xl:text-sm px-3 py-1 rounded-full">
+              {campaign?.type}
+            </span>
+
+          {/* Campaign Description */}
+          <p className="text-sm xl:text-base text-gray-600 leading-relaxed">
+            {campaign?.description}
+          </p>
+
+          {/* Amount */}
+          <p className="text-sm xl:text-base text-gray-800 font-medium flex items-center">
+            <span className="text-green-600 font-bold text-2xl lg:text-3xl">
+              ৳ {campaign?.amount}
+            </span>
+          </p>
+
+          {/* Deadline */}
+          <p className="text-sm xl:text-base text-gray-800 font-medium flex items-center">
+            <span className="text-gray-500 flex items-center gap-1">
+              <FaCalendarAlt className='text-orange-500' />
+              <span className="text-orange-600 font-semibold">{new Date(campaign?.deadline).toLocaleDateString()}</span>
+            </span>
+          </p>
+
+          {/* Campaign Owner */}
+          <p className="text-sm xl:text-base text-gray-800 font-medium flex items-center">
+            <span className="flex items-center gap-2">
+              <FaUser className='text-blue-600' />
+              {campaign?.name}
+            </span>
+          </p>
+
+          {/* Email */}
+          <p className="text-sm xl:text-base text-gray-800 font-medium flex items-center">
+            <span className="flex items-center gap-2 underline">
+              <FaEnvelope className='text-blue-600' />
+              <span className="text-blue-700">{campaign?.email}</span>
+            </span>
+          </p>
+
+          {/* Donate Button */}
+          <button
+            onClick={() => handleDonate(campaign)}
+            className="btn btn-sm md:btn-md border-none bg-gradient-to-r from-green-500 to-green-700 hover:from-green-600 hover:to-green-800 text-white text-sm xl:text-base font-medium rounded-md w-full transform transition duration-300"
+          >
+            Donate Now
+          </button>
         </div>
+      </div>
+
+      {/* Back Button for Mobile */}
+      <Link
+        to='/'
+        className='btn mt-5 shadow-none mx-auto w-fit font-libre bg-transparent border-none flex md:hidden gap-2 items-center'>
+        <span className='text-[#374151] text-lg drop-shadow-md underline'>Back to home</span>
+      </Link>
+    </div>
+  </Container>
+</div>
+
     );
 };
 

@@ -16,7 +16,7 @@ const Banner = () => {
             <Swiper
                 spaceBetween={30}
                 effect={'fade'}
-                navigation={true}
+                navigation={false}
                 autoplay={{
                     delay: 3000,
                     disableOnInteraction: false,
@@ -30,7 +30,7 @@ const Banner = () => {
 
                 <SwiperSlide>
                     <div
-                        className="hero h-[400px] lg:h-[500px] font-sans"
+                        className="hero h-[400px] font-sans"
                         style={{
                             backgroundImage: `url(https://i.ibb.co.com/hV3NfQD/11.webp)`,
                         }}>
@@ -49,7 +49,7 @@ const Banner = () => {
                     </div>
                 </SwiperSlide>
                 <SwiperSlide><div
-                    className="hero h-[400px] lg:h-[500px] font-sans"
+                    className="hero h-[400px]  font-sans"
                     style={{
                         backgroundImage: `url(https://i.ibb.co.com/VDtRZb0/10.webp)`,
                     }}>
@@ -69,7 +69,7 @@ const Banner = () => {
                 </SwiperSlide>
                 <SwiperSlide>
                     <div
-                        className="hero h-[400px] lg:h-[500px] font-sans"
+                        className="hero h-[400px]  font-sans"
                         style={{
                             backgroundImage: `url(https://i.ibb.co.com/V9k0GJ6/5.webp)`,
                         }}>

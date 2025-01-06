@@ -5,7 +5,7 @@ import Container from '../Container/Container';
 const RunningCampaigns = ({ campaigns }) => {
     return (
         <Container>
-            <div className='py-8 md:py-13 lg:py-20 font-sans'>
+            <div className='py-5 md:py-10 lg:py-12 font-sans'>
             <Zoom triggerOnce duration={2000}>
                 <div className="flex justify-center items-center mb-8 md:mb-12 ">
                     <div className="text-center">

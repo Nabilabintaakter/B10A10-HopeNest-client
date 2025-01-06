@@ -18,7 +18,7 @@ const Home = () => {
             <div className=' dark:bg-gray-700'>
                 <RunningCampaigns campaigns={campaigns}></RunningCampaigns>
             </div>
-            <div className='bg-gray-50 dark:bg-gradient-to-tr from-slate-700 to-slate-400'>
+            <div className='bg-gray-50 dark:bg-gray-700'>
                 <TopContributorsSection></TopContributorsSection>
             </div>
             <CallToActionSection></CallToActionSection>
