@@ -1,13 +1,10 @@
 import { FaFacebookF, FaInstagram, FaTwitter, FaPinterest } from "react-icons/fa";
 import logo from '../../assets/logo.png';
-import { useContext } from "react";
-import { AuthContext } from "../AuthProvider/AuthProvider";
 
 const Footer = () => {
-    const {dark} = useContext(AuthContext);
     return (
         <footer className="bg-gray-800 dark:bg-gray-200 dark:text-gray-700 text-white pt-12 pb-2 font-sans">
-            <div className="container mx-auto px-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+            <div className="w-[95%] mx-auto max-w-6xl grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
 
                 {/* Left Section - Logo & Description */}
                 <div>

@@ -13,7 +13,7 @@ const MyCampaign = () => {
 
     useEffect(() => {
         if (user?.email) {
-            fetch(`https://b10-a10-hope-nest-server.vercel.app/myCampaigns?email=${user.email}`)
+            fetch(`http://localhost:5000/myCampaigns?email=${user.email}`)
                 .then((res) => res.json())
                 .then((data) => {
                     setCampaigns(data);
@@ -37,7 +37,7 @@ const MyCampaign = () => {
             confirmButtonText: "Yes, delete it!"
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`https://b10-a10-hope-nest-server.vercel.app/campaigns/${id}`, {
+                fetch(`http://localhost:5000/campaigns/${id}`, {
                     method: "DELETE"
                 })
                     .then(res => res.json())

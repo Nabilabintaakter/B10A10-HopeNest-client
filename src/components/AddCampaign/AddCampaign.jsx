@@ -22,7 +22,7 @@ const AddCampaign = () => {
 
 
         // send data to db
-        fetch('https://b10-a10-hope-nest-server.vercel.app/campaigns', {
+        fetch('http://localhost:5000/campaigns', {
             method: "POST",
             headers: {
                 'content-type': 'application/json'

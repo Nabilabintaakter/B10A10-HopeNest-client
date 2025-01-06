@@ -4,15 +4,14 @@ import Banner from '../Banner/Banner';
 import RunningCampaigns from '../RunningCampaigns/RunningCampaigns';
 import TopContributorsSection from '../TopContributorsSection/TopContributorsSection';
 import CallToActionSection from '../CallToActionSection/CallToActionSection';
-import { useContext, useEffect } from 'react';
-import { AuthContext } from '../AuthProvider/AuthProvider';
+import {useEffect } from 'react';
+
 
 const Home = () => {
     useEffect(() => {
         document.title = 'Home | HopeNest';
     }, [])
     const campaigns = useLoaderData();
-    const { dark } = useContext(AuthContext);
     return (
         <div>
             <Banner></Banner>

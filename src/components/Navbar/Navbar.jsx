@@ -40,7 +40,7 @@ const Navbar = () => {
 
     return (
         <div className='dark:bg-gray-700/90 dark:text-white font-sans bg-white/60 z-50 fixed backdrop-blur-md w-full'>
-            <div className="navbar w-[98%]  mx-auto">
+            <div className="navbar w-[98%]  mx-auto max-w-6xl px-0">
                 <div className="navbar-start">
                     <div className="drawer w-[100%] lg:hidden">
                         <input id="my-drawer" type="checkbox" className="drawer-toggle" />

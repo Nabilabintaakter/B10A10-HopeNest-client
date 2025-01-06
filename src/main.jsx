@@ -29,12 +29,12 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
-        loader: () => fetch('https://b10-a10-hope-nest-server.vercel.app/campaigns')
+        loader: () => fetch('http://localhost:5000/campaigns')
       },
       {
         path: "/campaigns",
         element: <AllCampaigns></AllCampaigns>,
-        loader: () => fetch('https://b10-a10-hope-nest-server.vercel.app/allCampaigns')
+        loader: () => fetch('http://localhost:5000/allCampaigns')
       },
       {
         path: "/addCampaign",
@@ -58,13 +58,13 @@ const router = createBrowserRouter([
       },
       {
         path: "/campaigns/:id",
-        element: <PrivateRoute><Details></Details></PrivateRoute>,
-        loader: ({params})=> fetch(`https://b10-a10-hope-nest-server.vercel.app/campaigns/${params.id}`)
+        element: <Details></Details>,
+        loader: ({params})=> fetch(`http://localhost:5000/campaigns/${params.id}`)
       },
       {
         path: "/updateCampaign/:id",
         element: <PrivateRoute><UpdateCampaign></UpdateCampaign></PrivateRoute>,
-        loader: ({params})=> fetch(`https://b10-a10-hope-nest-server.vercel.app/campaigns/${params.id}`)
+        loader: ({params})=> fetch(`http://localhost:5000/campaigns/${params.id}`)
       },
     ]
   },

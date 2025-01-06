@@ -3,9 +3,9 @@ import { Slide } from 'react-awesome-reveal';
 
 const CallToActionSection = () => {
     return (
-        <section className="font-sans relative bg-cover bg-center py-20 text-white text-center" style={{ backgroundImage: 'url(https://i.ibb.co/rmCfwR8/15.jpg)' }}>
+        <section className=" font-sans relative bg-cover bg-center py-20 text-white text-center" style={{ backgroundImage: 'url(https://i.ibb.co/rmCfwR8/15.jpg)' }}>
             <div className="absolute inset-0 bg-black opacity-70"></div>
-            <div className="relative z-10 px-4 md:px-8">
+            <div className="max-w-6xl mx-auto relative z-10 px-4 md:px-8">
                 <Slide triggerOnce duration={2000}>
                 <h2 className="text-4xl md:text-5xl font-bold mb-4 leading-tight">
                     Make a Difference: Support Global Change

@@ -1,16 +1,15 @@
 import { Link, useLoaderData } from 'react-router-dom';
 import { FaSortAmountDownAlt } from "react-icons/fa";
-import { useContext, useEffect, useState } from 'react';
-import { AuthContext } from '../AuthProvider/AuthProvider';
+import { useEffect, useState } from 'react';
 import { Zoom } from 'react-awesome-reveal';
 
 const AllCampaigns = () => {
     const allCampaigns = useLoaderData();
     const [campaigns, setCampaigns] = useState(allCampaigns);
-    const {dark} = useContext(AuthContext);
+
 
     const handleSort = () => {
-        fetch('https://b10-a10-hope-nest-server.vercel.app/sortAllCampaigns')
+        fetch('http://localhost:5000/sortAllCampaigns')
             .then(res => res.json())
             .then(data => {
                 setCampaigns(data);
