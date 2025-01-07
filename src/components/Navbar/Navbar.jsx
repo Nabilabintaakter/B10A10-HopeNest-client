@@ -30,6 +30,9 @@ const Navbar = () => {
         } to='/campaigns'>All Campaign</NavLink></li>
         <li><NavLink onClick={scrollToTop} className={({ isActive }) =>
             isActive ? "text-[#FFA415] font-bold drop-shadow-[0_5px_5px_rgba(0,0,0.4,0.4)]" : ''
+        } to='/aboutUs'>About Us</NavLink></li>
+        <li><NavLink onClick={scrollToTop} className={({ isActive }) =>
+            isActive ? "text-[#FFA415] font-bold drop-shadow-[0_5px_5px_rgba(0,0,0.4,0.4)]" : ''
         } to='/addCampaign'>Add New Campaign</NavLink></li>
         <li><NavLink onClick={scrollToTop} className={({ isActive }) =>
             isActive ? "text-[#FFA415] font-bold drop-shadow-[0_5px_5px_rgba(0,0,0.4,0.4)]" : ''

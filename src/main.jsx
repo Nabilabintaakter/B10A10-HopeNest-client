@@ -23,6 +23,7 @@ import {
   QueryClient,
   QueryClientProvider,
 } from '@tanstack/react-query'
+import AboutUs from './components/AboutUs/AboutUs.jsx';
 const queryClient = new QueryClient()
 
 const router = createBrowserRouter([
@@ -59,6 +60,10 @@ const router = createBrowserRouter([
       {
         path: "/signUp",
         element: <SignUp></SignUp>,
+      },    
+      {
+        path: "/aboutUs",
+        element: <AboutUs></AboutUs>,
       },    
       {
         path: "/campaigns/:id",
