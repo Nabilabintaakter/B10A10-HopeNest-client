@@ -42,7 +42,7 @@ const Banner = () => {
                                     <p className="mb-5 text-sm md:text-base font-sans max-w-3xl mx-auto">
                                         Help us build a dynamic and inclusive space designed to empower aspiring entrepreneurs. This is more than just a workplace—it's a hub for creativity, collaboration, and innovation, where individuals can share ideas, develop skills, and bring their visions to life.
                                     </p>
-                                    <Link to='/campaigns/675309de74dab0e432970d6a' className="font-sans btn btn-sm md:btn-md bg-[#FFA71D] border-none">Join the mission</Link>
+                                    <Link to='/campaigns/677ce7c0e8657cf5c58adcd8' className="font-sans btn btn-sm md:btn-md bg-[#FFA71D] border-none">Join the mission</Link>
                                 </div>
                             </div>
                         </Fade>
@@ -61,7 +61,7 @@ const Banner = () => {
                                 <p className="mb-5 text-sm md:text-base font-sans max-w-3xl mx-auto">
                                     Help families rebuild their lives after losing their homes in a devastating fire. Your generous contributions can provide them with the resources they need to recover, rebuild, and start anew. Every donation counts!
                                 </p>
-                                <Link to='/campaigns/6753094f74dab0e432970d69' className="font-sans btn bg-[#FFA71D] btn-sm md:btn-md border-none">Support a Family</Link>
+                                <Link to='/campaigns/677ce7c0e8657cf5c58adcd7' className="font-sans btn bg-[#FFA71D] btn-sm md:btn-md border-none">Support a Family</Link>
                             </div>
                         </div>
                     </Fade>
@@ -81,7 +81,7 @@ const Banner = () => {
                                     <p className="text-sm md:text-base mb-5 font-sans max-w-3xl mx-auto">
                                         Join us in creating a community garden that promotes sustainable urban living. By supporting this initiative, you help provide a green space for residents to grow their own food, connect with nature, and foster a sense of community in our city.
                                     </p>
-                                    <Link to='/campaigns/675306f974dab0e432970d64' className="font-sans btn bg-[#FFA71D] border-none btn-sm md:btn-md">Contribute Now</Link>
+                                    <Link to='/campaigns/677ce7c0e8657cf5c58adcd2' className="font-sans btn bg-[#FFA71D] border-none btn-sm md:btn-md">Contribute Now</Link>
                                 </div>
                             </div>
                         </Fade>

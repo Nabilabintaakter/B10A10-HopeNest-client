@@ -36,7 +36,7 @@ const Details = () => {
             });
             return;
         }
-        fetch(`http://localhost:5000/myDonations`, {
+        fetch(`https://b10-a10-hope-nest-server.vercel.app/myDonations`, {
             method: "POST",
             headers: {
                 'content-type': 'application/json'
@@ -139,7 +139,7 @@ const Details = () => {
                     <Link
                         to='/'
                         className='btn mt-5 shadow-none mx-auto w-fit font-libre bg-transparent border-none flex md:hidden gap-2 items-center'>
-                        <span className='text-[#374151] text-lg drop-shadow-md underline'>Back to home</span>
+                        <span className='text-[#374151] dark:text-white text-lg drop-shadow-md underline'>Back to home</span>
                     </Link>
                 </div>
             </Container>

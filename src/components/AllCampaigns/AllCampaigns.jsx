@@ -15,7 +15,7 @@ const AllCampaigns = () => {
     const { data : campaigns =[], isLoading } = useQuery({
         queryKey: ['campaigns',sort],
         queryFn: async () => {
-            const res  = await axios.get(`http://localhost:5000/allCampaigns?sort=${sort}`)
+            const res  = await axios.get(`https://b10-a10-hope-nest-server.vercel.app/allCampaigns?sort=${sort}`)
             return (res.data);
         },
     })

@@ -16,11 +16,11 @@ const AboutUs = () => {
                             </div>
                         </div>
                     </Zoom>
-                    <div className="flex flex-col md:flex-row justify-center items-center gap-12">
+                    <div className="flex flex-col md:flex-row justify-center items-center gap-5">
 
                         {/* Mission Section with Animation */}
                         <Fade direction="up" cascade triggerOnce>
-                            <div className="w-full md:w-80 h-56 bg-blue-200 shadow-2xl rounded-lg p-3 transform transition duration-500 hover:scale-105 flex flex-col justify-center items-center">
+                            <div className="w-full md:w-56 lg:w-64 h-60 bg-blue-200 shadow-2xl rounded-lg p-3 transform transition duration-500 hover:scale-105 flex flex-col justify-center items-center">
                                 <div className="text-4xl text-blue-500 mb-4">
                                     <FaRocket />
                                 </div>
@@ -33,7 +33,7 @@ const AboutUs = () => {
 
                         {/* Vision Section with Animation */}
                         <Fade direction="up" cascade triggerOnce delay={200}>
-                            <div className="w-full md:w-80 h-56 bg-green-200 shadow-2xl rounded-lg p-6 transform transition duration-500 hover:scale-105 flex flex-col justify-center items-center">
+                            <div className="w-full md:w-56 lg:w-64 h-60 bg-green-200 shadow-2xl rounded-lg p-6 transform transition duration-500 hover:scale-105 flex flex-col justify-center items-center">
                                 <div className="text-4xl text-green-500 mb-4">
                                     <FaUsers />
                                 </div>
@@ -46,7 +46,7 @@ const AboutUs = () => {
 
                         {/* Values Section with Animation */}
                         <Fade direction="up" cascade triggerOnce delay={400}>
-                            <div className="w-full md:w-80 h-56 bg-yellow-200 shadow-2xl rounded-lg p-6 transform transition duration-500 hover:scale-105 flex flex-col justify-center items-center">
+                            <div className="w-full md:w-56 lg:w-64 h-60 bg-yellow-200 shadow-2xl rounded-lg p-6 transform transition duration-500 hover:scale-105 flex flex-col justify-center items-center">
                                 <div className="text-4xl text-yellow-500 mb-4">
                                     <FaLightbulb />
                                 </div>

@@ -26,7 +26,7 @@ const UpdateCampaign = () => {
         const updatedCampaign = { thumbnail, title, type, description, amount, deadline, email, name }
 
         // send data to server
-        fetch(`http://localhost:5000/campaigns/${_id}`, {
+        fetch(`https://b10-a10-hope-nest-server.vercel.app/campaigns/${_id}`, {
             method: "PUT",
             headers: {
                 "content-type": "application/json"

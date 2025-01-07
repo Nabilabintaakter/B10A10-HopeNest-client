@@ -59,11 +59,11 @@ const Navbar = () => {
                 <li tabIndex={0} className="dropdown dropdown-hover">
                     <label
                         tabIndex={0}
-                        className="text-[#FFA415] font-bold cursor-pointer drop-shadow-[0_5px_5px_rgba(0,0,0.4,0.4)]"
+                        
                     >
                         Dashboard
                     </label>
-                    <ul className="dropdown-content w-fit md:w-[200px] bg-white dark:bg-gray-800 shadow rounded-md p-2">
+                    <ul className="dropdown-content w-fit md:w-[200px] bg-white dark:bg-gray-800 dark:text-white shadow rounded-md p-2">
                         <li>
                             <NavLink
                                 onClick={scrollToTop}
