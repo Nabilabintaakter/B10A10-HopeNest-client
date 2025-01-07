@@ -1,6 +1,4 @@
-import { Tooltip as ReactTooltip } from 'react-tooltip';
 import { Link } from 'react-router-dom';
-import { Fade } from 'react-awesome-reveal';
 
 const CampaignCard = ({ campaign }) => {
     return (
@@ -13,7 +11,7 @@ const CampaignCard = ({ campaign }) => {
             className="w-full h-full object-cover"
         />
         <div
-            className="absolute top-4 left-4 bg-blue-500 text-white px-3 py-1 rounded-full text-sm font-semibold cursor-pointer"
+            className="absolute top-4 left-4 bg-orange-100 text-orange-600 px-3  border-[1px] border-orange-500 rounded-full text-xs font-medium cursor-pointer"
         >
             {campaign?.type}
         </div>
@@ -30,11 +28,15 @@ const CampaignCard = ({ campaign }) => {
         {/* Amount and Deadline */}
         <div className="">
             <div>
-                <p className='text-gray-600 text-xs block md:hidden'>{campaign?.description.slice(0, 51)}...</p>
+                <p className='text-gray-600 text-xs block md:hidden 2xl:block'>{campaign?.description.slice(0, 51)}...</p>
                 <p className='text-gray-600 hidden text-sm md:block xl:hidden'>{campaign?.description.slice(0, 60)}...</p>
-                <p className='text-gray-600 text-sm hidden xl:block'>{campaign?.description.slice(0, 90)}...</p>
+                <p className='text-gray-600 text-sm hidden xl:block 2xl:hidden'>{campaign?.description.slice(0, 90)}...</p>
             </div>
-            <div className="flex justify-between items-center text-gray-700 mt-2">
+        </div>
+
+        {/* Action Button */}
+        <div className="">
+        <div className="flex justify-between items-center text-gray-700 mt-2">
                 <div className="text-lg font-semibold">
                     <span className="text-[#F85606]">৳{campaign?.amount}</span>
                 </div>
@@ -42,13 +44,9 @@ const CampaignCard = ({ campaign }) => {
                     <span className="font-medium text-green-500">{campaign?.deadline}</span>
                 </div>
             </div>
-        </div>
-
-        {/* Action Button */}
-        <div className="mt-4">
             <Link
                 to={`/campaigns/${campaign?._id}`}
-                className="w-full block bg-blue-600 hover:bg-blue-700 text-white py-1 md:py-2 rounded-md text-center transition-colors duration-300 -mt-2"
+                className="w-full block bg-blue-600 hover:bg-blue-700 text-white py-1 md:py-2 rounded-md text-center transition-colors duration-300 mt-2"
             >
                 See More
             </Link>

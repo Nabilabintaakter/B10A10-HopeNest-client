@@ -45,7 +45,7 @@ const myDonation = () => {
                         <div className="text-center mt-20 space-y-5 flex flex-col justify-center items-center">
                             {/* Icon */}
                             <div className="flex justify-center">
-                                <div className="bg-orange-100 text-orange-500 p-4 rounded-full shadow-md">
+                                <div className="bg-red-100 text-red-500 p-4 rounded-full shadow-md">
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" className="w-10 h-10">
                                         <path d="M12 2C6.486 2 2 6.486 2 12s4.486 10 10 10 10-4.486 10-10S17.514 2 12 2zm0 18c-4.411 0-8-3.589-8-8s3.589-8 8-8 8 3.589 8 8-3.589 8-8 8zm-1-11h2v6h-2zm0 8h2v2h-2z" />
                                     </svg>
@@ -53,7 +53,7 @@ const myDonation = () => {
                             </div>
 
                             {/* Heading */}
-                            <h2 className="text-2xl italic md:text-3xl font-medium text-gray-800 dark:text-white">
+                            <h2 className="text-2xl italic md:text-3xl font-medium text-red-500 dark:text-white">
                                 No Donations Yet
                             </h2>
 

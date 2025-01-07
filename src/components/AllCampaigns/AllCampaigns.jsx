@@ -1,5 +1,5 @@
-import { Link, useLoaderData } from 'react-router-dom';
-import { FaSortAmountDownAlt, FaThList, FaThLarge } from "react-icons/fa";
+import { useLoaderData } from 'react-router-dom';
+import { FaThList, FaThLarge } from "react-icons/fa";
 import { useEffect, useState } from 'react';
 import { Zoom } from 'react-awesome-reveal';
 import Container from '../Container/Container';
@@ -7,17 +7,17 @@ import CampaignCard from '../RunningCampaigns/CampaignCard';
 import CampaignTableRow from './CampaignTableRow';
 
 const AllCampaigns = () => {
-    const allCampaigns = useLoaderData();
-    const [campaigns, setCampaigns] = useState(allCampaigns);
+    const [campaigns, setCampaigns] = useState([])
     const [isGridView, setIsGridView] = useState(true);
+    const [sort, setSort] = useState('');
 
-    const handleSort = () => {
-        fetch('http://localhost:5000/sortAllCampaigns')
-            .then(res => res.json())
-            .then(data => {
-                setCampaigns(data);
-            });
-    };
+    useEffect(()=>{
+        fetch(`http://localhost:5000/allCampaigns?sort=${sort}`)
+        .then(res => res.json())
+        .then(data => {
+            setCampaigns(data);
+        });
+    },[sort])
 
     useEffect(() => {
         document.title = 'AllCampaigns | HopeNest';
@@ -35,9 +35,19 @@ const AllCampaigns = () => {
                     </Zoom>
                 </div>
                 <div className='flex  justify-between items-center mb-2'>
-                    <button onClick={handleSort} className='btn bg-gradient-to-r from-blue-300 to-pink-400 border-none hover:text-white transition-all duration-300 flex items-center gap-2'>
-                        <FaSortAmountDownAlt /> Sort by Amount
-                    </button>
+                    {/* Sort by Created At */}
+                    <div>
+                        <select
+                            name="sort"
+                            id="sort"
+                            className=" border p-1 md:p-3 rounded-md bg-white "
+                            onChange={(e) => setSort(e.target.value)}
+                        >
+                            <option value="">Sort By Amount</option>
+                            <option value="asc">Ascending Order</option>
+                            <option value="dsc">Descending Order</option>
+                        </select>
+                    </div>
                     <div className="ml-2 md:ml-0 flex gap-2">
                         <button
                             title='List view'
@@ -58,7 +68,7 @@ const AllCampaigns = () => {
 
                 {/* Render campaigns as Grid or Table based on the view */}
                 {isGridView ? (
-                    <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3'>
+                    <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5 gap-3'>
                         {
                             campaigns.map(campaign =>
                                 <CampaignCard campaign={campaign} key={campaign._id}></CampaignCard>
