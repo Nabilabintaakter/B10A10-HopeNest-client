@@ -1,7 +1,7 @@
 import logo from '../../assets/logo.png';
 import { Link, NavLink } from 'react-router-dom';
 import { IoMenu, IoMoon, IoSunny } from "react-icons/io5";
-import { useContext, useState } from 'react';
+import { useContext } from 'react';
 import { AuthContext } from '../AuthProvider/AuthProvider';
 import { BiLogOut } from 'react-icons/bi';
 import userPro from '../../assets/userPro.webp';
@@ -16,31 +16,99 @@ const Navbar = () => {
             behavior: 'smooth',
         });
     };
-
     const { user, handleSignOut } = useContext(AuthContext);
-    const links = <>
-        <li><NavLink onClick={scrollToTop}
-            to="/"
-            className={({ isActive }) =>
-                isActive ? "text-[#FFA415] font-bold drop-shadow-[0_5px_5px_rgba(0,0,0.4,0.4)]" : ''
-            }
-        >Home</NavLink></li>
-        <li><NavLink onClick={scrollToTop} className={({ isActive }) =>
-            isActive ? "text-[#FFA415] font-bold drop-shadow-[0_5px_5px_rgba(0,0,0.4,0.4)]" : ''
-        } to='/campaigns'>All Campaign</NavLink></li>
-        <li><NavLink onClick={scrollToTop} className={({ isActive }) =>
-            isActive ? "text-[#FFA415] font-bold drop-shadow-[0_5px_5px_rgba(0,0,0.4,0.4)]" : ''
-        } to='/aboutUs'>About Us</NavLink></li>
-        <li><NavLink onClick={scrollToTop} className={({ isActive }) =>
-            isActive ? "text-[#FFA415] font-bold drop-shadow-[0_5px_5px_rgba(0,0,0.4,0.4)]" : ''
-        } to='/addCampaign'>Add New Campaign</NavLink></li>
-        <li><NavLink onClick={scrollToTop} className={({ isActive }) =>
-            isActive ? "text-[#FFA415] font-bold drop-shadow-[0_5px_5px_rgba(0,0,0.4,0.4)]" : ''
-        } to='/myCampaign'>My Campaign</NavLink></li>
-        <li><NavLink onClick={scrollToTop} className={({ isActive }) =>
-            isActive ? "text-[#FFA415] font-bold drop-shadow-[0_5px_5px_rgba(0,0,0.4,0.4)]" : ''
-        } to='/myDonations'>My Donations</NavLink></li>
-    </>
+    const links = (
+        <>
+            {/* Public Links */}
+            <li>
+                <NavLink
+                    onClick={scrollToTop}
+                    to="/"
+                    className={({ isActive }) =>
+                        isActive ? "text-[#FFA415] font-bold drop-shadow-[0_5px_5px_rgba(0,0,0.4,0.4)]" : ""
+                    }
+                >
+                    Home
+                </NavLink>
+            </li>
+            <li>
+                <NavLink
+                    onClick={scrollToTop}
+                    to="/campaigns"
+                    className={({ isActive }) =>
+                        isActive ? "text-[#FFA415] font-bold drop-shadow-[0_5px_5px_rgba(0,0,0.4,0.4)]" : ""
+                    }
+                >
+                    All Campaign
+                </NavLink>
+            </li>
+            <li>
+                <NavLink
+                    onClick={scrollToTop}
+                    to="/aboutUs"
+                    className={({ isActive }) =>
+                        isActive ? "text-[#FFA415] font-bold drop-shadow-[0_5px_5px_rgba(0,0,0.4,0.4)]" : ""
+                    }
+                >
+                    About Us
+                </NavLink>
+            </li>
+
+            {/* Dashboard Dropdown for Authenticated Users */}
+            {user && (
+                <li tabIndex={0} className="dropdown dropdown-hover">
+                    <label
+                        tabIndex={0}
+                        className="text-[#FFA415] font-bold cursor-pointer drop-shadow-[0_5px_5px_rgba(0,0,0.4,0.4)]"
+                    >
+                        Dashboard
+                    </label>
+                    <ul className="dropdown-content w-fit md:w-[200px] bg-white dark:bg-gray-800 shadow rounded-md p-2 mt-2">
+                        <li>
+                            <NavLink
+                                onClick={scrollToTop}
+                                to="/addCampaign"
+                                className={({ isActive }) =>
+                                    isActive
+                                        ? "text-[#FFA415] font-bold drop-shadow-[0_5px_5px_rgba(0,0,0.4,0.4)]"
+                                        : ""
+                                }
+                            >
+                                Add New Campaign
+                            </NavLink>
+                        </li>
+                        <li>
+                            <NavLink
+                                onClick={scrollToTop}
+                                to="/myCampaign"
+                                className={({ isActive }) =>
+                                    isActive
+                                        ? "text-[#FFA415] font-bold drop-shadow-[0_5px_5px_rgba(0,0,0.4,0.4)]"
+                                        : ""
+                                }
+                            >
+                                My Campaign
+                            </NavLink>
+                        </li>
+                        <li>
+                            <NavLink
+                                onClick={scrollToTop}
+                                to="/myDonations"
+                                className={({ isActive }) =>
+                                    isActive
+                                        ? "text-[#FFA415] font-bold drop-shadow-[0_5px_5px_rgba(0,0,0.4,0.4)]"
+                                        : ""
+                                }
+                            >
+                                My Donations
+                            </NavLink>
+                        </li>
+                    </ul>
+                </li>
+            )}
+        </>
+    );
+
 
     return (
         <div className='dark:bg-gray-700/90 dark:text-white font-sans bg-white/60 z-50 fixed backdrop-blur-md w-full'>
@@ -63,12 +131,13 @@ const Navbar = () => {
                         </div>
                         <Link to='/'><div className='w-44 hidden lg:block'><img className='w-full dark:bg-white p-2 rounded-tl-xl rounded-br-xl' src={logo} alt="" /></div></Link>
                     </div>
-                    <div className="navbar-center ">
-                        <ul className="hidden lg:flex menu menu-horizontal px-1">
+                    <div className="navbar-center">
+                        <ul className="menu menu-horizontal hidden lg:flex">
                             {links}
                         </ul>
                         <Link to='/'><div className='w-44 block lg:hidden'><img className='w-full dark:bg-white p-2 rounded-tl-xl rounded-br-xl' src={logo} alt="" /></div></Link>
                     </div>
+
                     <div className="navbar-end flex justify-end">
                         <div className='mr-2 md:mr-4'>
                             <button
@@ -139,7 +208,7 @@ const Navbar = () => {
                                         className="tooltip-custom logIn"
                                     />
 
-                                    <Link to="/signUp"id='signUpBtn'>
+                                    <Link to="/signUp" id='signUpBtn'>
                                         <button className="hidden md:block w-[82px] md:w-24 btn btn-sm md:btn-md rounded-md bg-green-500 text-white hover:bg-green-600 transition-all duration-500 border-none">
                                             Sign Up
                                         </button>

@@ -3,6 +3,7 @@ import { Link, useLoaderData, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../AuthProvider/AuthProvider';
 import Swal from 'sweetalert2';
 import { Fade, Zoom } from 'react-awesome-reveal';
+import Container from '../Container/Container';
 
 const UpdateCampaign = () => {
     const { user, setUser, dark } = useContext(AuthContext)
@@ -58,16 +59,17 @@ const UpdateCampaign = () => {
             })
     }
     return (
-        <div className='dark:bg-gradient-to-tr dark:from-gray-900 dark:to-gray-700'>
-            <div className='w-[90%] mx-auto max-w-6xl'>
+
+        <Container>
+            <div className=''>
                 <div className="p-4 lg:py-[70px] md:px-14 lg:px-[112px] bg-gradient-to-tr from-[#fdb54244] to-[#f8b64bcc] dark:bg-gradient-to-tr dark:from-[#f1d29f] dark:to-[#f8c46f] mb-8 md:mb-13  rounded-[5px]">
                     <Zoom triggerOnce duration={2000}>
-                    <div className="flex justify-center items-center mb-3 md:mb-8">
-                        <div className="text-center">
-                            <h1 className="font-sans font-semibold text-[#374151] text-3xl md:text-5xl  mb-3 md:mb-8">Update Your Campaign</h1>
-                            <p className="text-sm md:text-lg font-sans text-[#1B1A1AB3] w-full md:w-[90%] mx-auto">Modify your campaign details easily. Update the necessary fields to keep your campaign accurate and impactful.</p>
+                        <div className="flex justify-center items-center mb-3 md:mb-8">
+                            <div className="text-center">
+                                <h1 className="font-sans font-semibold text-[#374151] text-3xl md:text-5xl  mb-3 md:mb-8">Update Your Campaign</h1>
+                                <p className="text-sm md:text-lg font-sans text-[#1B1A1AB3] w-full md:w-[90%] mx-auto">Modify your campaign details easily. Update the necessary fields to keep your campaign accurate and impactful.</p>
+                            </div>
                         </div>
-                    </div>
                     </Zoom>
                     {/* form start */}
                     <form onSubmit={handleUpdateCampaign}>
@@ -143,16 +145,17 @@ const UpdateCampaign = () => {
                         </div>
                         {/* 5th row */}
                         <Fade triggerOnce duration={2000}>
-                        <div className="font-sans">
-                            <button type="submit" className="font-sans btn bg-[#FCAA29] w-full rounded-[5px] text-[#331A15] text-base md:text-xl border-none">Update</button>
-                        </div>
+                            <div className="font-sans">
+                                <button type="submit" className="font-sans btn bg-[#FCAA29] w-full rounded-[5px] text-[#331A15] text-base md:text-xl border-none">Update</button>
+                            </div>
                         </Fade>
                     </form>
                 </div>
                 <Link to='/' className='btn mb-12 md:mb-24 shadow-none mx-auto w-fit font-sans bg-transparent border-none  flex gap-2 items-center'><span className='text-[#374151] dark:text-white text-lg md:text-2xl drop-shadow-[0_4px_6px_rgba(0,0,0,0.3)] underline'>Back to home</span>
                 </Link>
             </div>
-        </div>
+        </Container>
+
     );
 };
 

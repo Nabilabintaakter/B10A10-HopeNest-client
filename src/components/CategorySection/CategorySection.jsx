@@ -1,7 +1,7 @@
 import React from 'react';
 import Container from '../Container/Container';
 import { FaRocket, FaBriefcase, FaHeart, FaUser, FaGraduationCap, FaHospital } from 'react-icons/fa';
-import { Fade } from 'react-awesome-reveal';
+import { Fade, Zoom } from 'react-awesome-reveal';
 
 const CategorySection = () => {
     const categories = [
@@ -15,16 +15,16 @@ const CategorySection = () => {
 
     return (
         <Container>
-            <div className="py-10 font-sans">
+            <div className=" pt-5 pb-12 md:pb-16 font-sans">
                 {/* Section Header */}
-                <div className="text-center mb-8">
-                    <h2 className="text-3xl md:text-4xl font-bold text-gray-800 dark:text-white mb-2">
-                        Explore by Category
-                    </h2>
-                    <p className="text-gray-600 dark:text-gray-300 text-sm md:text-base">
-                        Browse through various categories and support the causes that matter to you.
-                    </p>
-                </div>
+                <Zoom triggerOnce duration={2000}>
+                    <div className="flex justify-center items-center mb-12 md:mb-14">
+                        <div className="text-center">
+                            <h1 className="font-semibold text-[#374151] dark:text-white text-3xl md:text-4xl mb-2 md:mb-4">Explore by Category</h1>
+                            <p className="text-sm md:text-base font-sans text-[#1B1A1AB3] dark:text-gray-300 w-full md:w-[70%] mx-auto">Browse through various categories and support the causes that matter to you.</p>
+                        </div>
+                    </div>
+                </Zoom>
                 {/* Categories */}
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
                     {categories.map((category, index) => (
