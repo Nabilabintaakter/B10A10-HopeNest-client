@@ -15,7 +15,7 @@ const Home = () => {
     return (
         <div>
             <Banner></Banner>
-            <div className=' dark:bg-gray-700'>
+            <div className='bg-[#F5F5F5] dark:bg-gray-700'>
                 <RunningCampaigns campaigns={campaigns}></RunningCampaigns>
             </div>
             <div className='bg-gray-50 dark:bg-gray-700'>

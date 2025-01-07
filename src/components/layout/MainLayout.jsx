@@ -15,7 +15,7 @@ const MainLayout = () => {
             >
                 <Navbar />
             </div>
-            <div className="min-h-[calc(100vh-857px)] md:min-h-[calc(100vh-373px)]">
+            <div className="min-h-[calc(100vh-857px)] md:min-h-[calc(100vh-373px)] bg-[#F5F5F5] dark:bg-gradient-to-tr dark:from-gray-900 dark:to-gray-700">
                 <Outlet />
             </div>
             <div>
