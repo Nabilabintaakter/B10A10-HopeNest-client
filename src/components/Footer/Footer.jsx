@@ -1,12 +1,13 @@
 import { FaFacebookF, FaInstagram, FaTwitter, FaPinterest } from "react-icons/fa";
 import logo from '../../assets/logo.png';
 import Container from "../Container/Container";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
     return (
         <footer className="bg-gray-800 dark:bg-gray-200 dark:text-gray-700 text-white pt-12 pb-2 font-sans">
             <Container>
-                <div className=" grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+                <div className=" grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
 
                     {/* Left Section - Logo & Description */}
                     <div>
@@ -48,25 +49,14 @@ const Footer = () => {
                         </div>
                     </div>
 
-                    {/* Middle Section - Services */}
-                    <div>
-                        <h4 className="font-semibold text-lg text-gray-400">Services</h4>
-                        <ul className="mt-2 ">
-                            <li><a href="#" className="hover:text-blue-500">Customer Support</a></li>
-                            <li><a href="#" className="hover:text-blue-500">Donation Tracking</a></li>
-                            <li><a href="#" className="hover:text-blue-500">Secure Payments</a></li>
-                            <li><a href="#" className="hover:text-blue-500">Community Impact</a></li>
-                        </ul>
-                    </div>
 
                     {/* Right Section - Links */}
                     <div>
                         <h4 className="font-semibold text-lg text-gray-400">Links</h4>
                         <ul className="mt-2">
-                            <li><a href="#" className="hover:text-blue-500">About Us</a></li>
-                            <li><a href="#" className="hover:text-blue-500">Donate Now</a></li>
-                            <li><a href="#" className="hover:text-blue-500">FAQs</a></li>
-                            <li><a href="#" className="hover:text-blue-500">Privacy Policy</a></li>
+                            <li className="hover:text-blue-500"><Link to='/aboutUs'>About Us</Link></li>
+                            <li className="hover:text-blue-500"><Link to='/campaigns'>Donate Now</Link></li>
+                            <li className="hover:text-blue-500"><Link to='/campaigns'>Donation Tracking</Link></li>
                         </ul>
                     </div>
 

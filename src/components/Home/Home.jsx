@@ -25,7 +25,9 @@ const Home = () => {
             <div className='bg-gray-50 dark:bg-gray-700'>
                 <TopContributorsSection></TopContributorsSection>
             </div>
+            <section id='customer'>
             <CallToActionSection></CallToActionSection>
+            </section>
         </div>
     );
 };
