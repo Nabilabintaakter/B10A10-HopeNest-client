@@ -63,7 +63,7 @@ const Navbar = () => {
                     >
                         Dashboard
                     </label>
-                    <ul className="dropdown-content w-fit md:w-[200px] bg-white dark:bg-gray-800 shadow rounded-md p-2 mt-2">
+                    <ul className="dropdown-content w-fit md:w-[200px] bg-white dark:bg-gray-800 shadow rounded-md p-2">
                         <li>
                             <NavLink
                                 onClick={scrollToTop}
