@@ -14,7 +14,7 @@ const RunningCampaigns = ({ campaigns }) => {
                     </div>
                 </div>
             </Zoom>
-            <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3'>
+            <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 md:gap-3'>
                 {
                     campaigns.map(campaign =>
                         <CampaignCard campaign={campaign} key={campaign._id}></CampaignCard>

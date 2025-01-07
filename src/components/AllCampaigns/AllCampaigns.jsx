@@ -5,20 +5,22 @@ import { Zoom } from 'react-awesome-reveal';
 import Container from '../Container/Container';
 import CampaignCard from '../RunningCampaigns/CampaignCard';
 import CampaignTableRow from './CampaignTableRow';
+import axios from 'axios';
+import { useQuery } from '@tanstack/react-query';
 
 const AllCampaigns = () => {
-    const [campaigns, setCampaigns] = useState([])
+    // const [campaigns, setCampaigns] = useState([])
     const [isGridView, setIsGridView] = useState(true);
     const [sort, setSort] = useState('');
+    const { data : campaigns =[], isLoading } = useQuery({
+        queryKey: ['campaigns',sort],
+        queryFn: async () => {
+            const res  = await axios.get(`http://localhost:5000/allCampaigns?sort=${sort}`)
+            return (res.data);
+        },
+    })
 
-    useEffect(()=>{
-        fetch(`http://localhost:5000/allCampaigns?sort=${sort}`)
-        .then(res => res.json())
-        .then(data => {
-            setCampaigns(data);
-        });
-    },[sort])
-
+    
     useEffect(() => {
         document.title = 'AllCampaigns | HopeNest';
     }, []);
@@ -40,7 +42,7 @@ const AllCampaigns = () => {
                         <select
                             name="sort"
                             id="sort"
-                            className=" border p-1 md:p-3 rounded-md bg-white "
+                            className=" border p-1 md:p-3 rounded-md bg-white text-sm md:text-base"
                             onChange={(e) => setSort(e.target.value)}
                         >
                             <option value="">Sort By Amount</option>

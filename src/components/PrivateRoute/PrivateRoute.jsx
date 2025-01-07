@@ -1,28 +1,13 @@
-import { Watch } from 'react-loader-spinner';
+
 import { Navigate, useLocation } from 'react-router-dom';
 import { AuthContext } from '../AuthProvider/AuthProvider';
 import { useContext } from 'react';
+import LoadingSpinner from '../LoadingSpinner/LoadingSpinner';
 
 const PrivateRoute = ({ children }) => {
-    const { user, loading, setLoading } = useContext(AuthContext);
+    const { user, loading } = useContext(AuthContext);
     const location = useLocation();
-    if (loading) {
-        setLoading(true)
-        return (
-            <div className='min-h-[calc(100vh-373px)] flex justify-center items-center'>
-                <Watch
-                    visible={true}
-                    height="80"
-                    width="80"
-                    radius="48"
-                    color="#FFA71D"
-                    ariaLabel="watch-loading"
-                    wrapperStyle={{}}
-                    wrapperClass=""
-                />
-            </div>
-        )
-    }
+    if (loading) return <LoadingSpinner></LoadingSpinner>
     if (!user) {
         return <Navigate state={{ from: location.pathname }} to='/login'></Navigate>
     }

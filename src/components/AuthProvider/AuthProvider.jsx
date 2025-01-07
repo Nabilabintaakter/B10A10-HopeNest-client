@@ -7,7 +7,6 @@ const googleProvider = new GoogleAuthProvider();
 export const AuthContext = createContext();
 
 const AuthProvider = ({ children }) => {
-    // const [myEmail, setMyEmail] = useState('')
     const [user, setUser] = useState(null)
     const [loading,setLoading] = useState(true)
     const [dark, setDark] = useState(false);

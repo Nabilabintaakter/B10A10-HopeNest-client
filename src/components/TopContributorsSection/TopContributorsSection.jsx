@@ -44,9 +44,8 @@ const TopContributorsSection = () => {
                     </Zoom>
                     <div className="grid gap-3 md:grid-cols-2 lg:grid-cols-3">
                         {contributors.map((contributor, index) => (
-                            <Fade direction='up' triggerOnce>
+                            <Fade key={index} direction='up' triggerOnce>
                                 <div
-                                    key={index}
                                     className={`p-3 lg:p-4 rounded-xl shadow-x duration-500 transition-all transform hover:scale-105 hover:shadow-2xl ${contributor.color} text-gray-800 flex flex-col`}
                                 >
                                     <div className="flex items-center justify-center mb-6">

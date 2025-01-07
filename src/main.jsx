@@ -19,6 +19,11 @@ import PrivateRoute from './components/PrivateRoute/PrivateRoute.jsx';
 import Details from './components/Details/Details.jsx';
 import UpdateCampaign from './components/UpdateCampaign/UpdateCampaign.jsx';
 import ErrorPage from './components/ErrorPage/ErrorPage.jsx';
+import {
+  QueryClient,
+  QueryClientProvider,
+} from '@tanstack/react-query'
+const queryClient = new QueryClient()
 
 const router = createBrowserRouter([
   {
@@ -54,16 +59,16 @@ const router = createBrowserRouter([
       {
         path: "/signUp",
         element: <SignUp></SignUp>,
-      },
+      },    
       {
         path: "/campaigns/:id",
         element: <Details></Details>,
-        loader: ({params})=> fetch(`http://localhost:5000/campaigns/${params.id}`)
+        loader: ({ params }) => fetch(`http://localhost:5000/campaigns/${params.id}`)
       },
       {
         path: "/updateCampaign/:id",
         element: <PrivateRoute><UpdateCampaign></UpdateCampaign></PrivateRoute>,
-        loader: ({params})=> fetch(`http://localhost:5000/campaigns/${params.id}`)
+        loader: ({ params }) => fetch(`http://localhost:5000/campaigns/${params.id}`)
       },
     ]
   },
@@ -71,8 +76,10 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <AuthProvider>
-      <RouterProvider router={router} />
-    </AuthProvider>
+    <QueryClientProvider client={queryClient}>
+      <AuthProvider>
+        <RouterProvider router={router} />
+      </AuthProvider>
+    </QueryClientProvider>
   </StrictMode>,
 )
