@@ -27,6 +27,16 @@ HopeNest is a dynamic crowdfunding platform designed to help individuals and org
 - **404 Page**: Custom "Not Found" page for invalid routes.
 
 
+## 🖼️ Screenshots
+
+### Home Page:
+<img src="https://i.ibb.co.com/chQgMMj/hopenest-1.jpg" alt="Home Page Screenshot" width="100%" />
+
+### My Campaigns Page:
+<img src="https://i.ibb.co.com/8DkCQ6L/hopenest-2.jpg" alt="Campaigns Page Screenshot" width="100%" />
+
+
+
 ## 🛠️ Technologies Used
 
 ### Dependencies:
