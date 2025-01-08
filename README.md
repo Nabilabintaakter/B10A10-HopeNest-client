@@ -1,31 +1,75 @@
-# HopeNest - Crowdfunding for a Better Tomorrow 🌍
+# HopeNest: Crowdfunding with Compassion🌍
 
-Welcome to **HopeNest**, a crowdfunding platform dedicated to supporting causes that make a difference. Whether you're looking to fund a community project, start-up business, or disaster relief effort, HopeNest connects passionate individuals with initiatives that need help. 
+HopeNest is a dynamic crowdfunding platform designed to help individuals and organizations raise funds for various causes. From personal needs to creative projects and startups, HopeNest empowers users to connect with contributors and bring their dreams to life. With a sleek design, seamless user experience, and powerful features, HopeNest offers a platform where hope truly finds a nest.
 
-🌐 **Live Site:** [HopeNest](https://hopenest-7f670.web.app/)
+## 🚀 Live Site URL
 
-## Key Features:
-- 🚀 **Easy Campaign Creation**: Launch your own crowdfunding campaign quickly and efficiently.
-- 📊 **Real-time Tracking**: Monitor the progress of campaigns with real-time updates.
-- 💬 **Community Engagement**: Connect with other supporters and campaign organizers.
-- 🌍 **Global Reach**: Support campaigns across the world for causes that matter.
+🔗 [Visit HopeNest](https://hopenest-7f670.web.app/)  
 
-## How to Use:
-1. Visit the homepage and browse through various live campaigns.
-2. Choose a campaign that resonates with you and donate.
-3. Track the campaign's progress and see the impact of your support.
-4. Start your own campaign to raise funds for your cause.
+## ✨ Key Features
 
-## Technologies Used:
-- 🔧 **React** - for building a responsive and dynamic user interface.
-- 🌐 **Firebase** - for authentication and real-time database management.
-- 🎨 **Tailwind CSS** - for a modern and responsive design.
+- **Responsive Design**: Fully responsive for mobile, tablet, and desktop devices.
+- **Authentication**: Secure email/password-based login and registration with Google login integration.
+- **Protected Routes**: Private routes for user-specific functionalities like adding and managing campaigns and donations.
+- **Campaign Management**: Add, view, update, and delete campaigns with features like sorting and filtering.
+- **Dark/Light Mode**: A toggle for switching between dark and light themes.
+- **Real-Time Data**: Display running campaigns with deadlines and details fetched from a live database.
+- **Interactive UI**: Smooth animations, tooltips, and reveal effects for an engaging user experience.
 
-## Campaign Categories:
-- 🌱 **Community Projects**: Support initiatives aimed at making a positive impact in local communities.
-- 🚀 **Startup Ventures**: Fund new businesses that need seed capital to get started.
-- 🆘 **Disaster Relief**: Help families and communities recover from natural disasters.
-- 🌍 **Environmental Sustainability**: Fund projects that promote a healthier planet.
+## 📂 Project Structure
 
+### Pages:
+- **Home Page**: Showcases running campaigns, a banner slider, and additional sections for enhanced user engagement.
+- **Campaigns**: Displays all campaigns with sorting functionality and detailed views for each campaign.
+- **Add Campaign**: A protected form to add new campaigns with essential details.
+- **My Campaigns**: User-specific campaigns with options to update or delete.
+- **My Donations**: Displays all campaigns a user has donated to, presented in card format.
+- **404 Page**: Custom "Not Found" page for invalid routes.
 
 
+## 🛠️ Technologies Used
+
+### Dependencies:
+- **Frontend Framework**: React (v18.3.1)
+- **State Management**: React Query (`@tanstack/react-query`)
+- **Routing**: React Router DOM (v6.28.0)
+- **Styling**: Tailwind CSS (v3.4.16) with DaisyUI (v4.12.14)
+- **Animations**: React Awesome Reveal, Swiper, and Lottie React
+- **Tooltips**: React Tooltip
+- **Alerts**: SweetAlert2
+- **HTTP Client**: Axios
+- **Data Storage**: Firebase and LocalForage
+- **Sorting**: Match Sorter, Sort-By
+
+### Dev Dependencies:
+- **Development Server**: Vite (v6.0.1)
+- **Linting**: ESLint, ESLint Plugin React
+- **TypeScript Support**: Types for React and React DOM
+- **CSS Processor**: PostCSS, Autoprefixer
+
+## 🖥️ Installation Guide
+
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/Nabilabintaakter/HopeNest-client.git
+1. **Navigate to the project directory:**
+   ```bash
+   cd HopeNest-client
+1. **Install dependencies:**
+   ```bash
+   npm install
+1. **Run the development server:**
+   ```bash
+   npm run dev
+
+### Live API
+
+The backend API for the HopeNest project is hosted and can be accessed live:
+
+🔗 [Check Backend repository](https://github.com/Nabilabintaakter/B10A10-HopeNest-server)
+
+🔗 [Live API](https://b10-a10-hope-nest-server.vercel.app/)
+
+You can use the live API endpoints directly to interact with the data (e.g., fetch campaigns, donate to campaigns, etc.).
+
+Make sure to configure the frontend to connect with the live backend for full functionality.
